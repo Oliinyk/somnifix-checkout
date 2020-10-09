@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="robots" content="noindex">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Checkout</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel='stylesheet'>
+
+<!-- build:css assets/css/all.css -->
+<link rel="stylesheet" href="assets/css/plugins.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<!-- endbuild -->
+<!-- build:js assets/js/all.js defer -->
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/script.js"></script>
+<!-- endbuild -->
+</head>
+<body>
+	<div class="wrap">
+		<div class="progress-bar">
+			<ul>
+				<li class="active"><span>1.Customer</span> </li>
+				<li><span>2.Shipping</span></li>
+				<li><span>3.Payment</span></li>
+			</ul>
+		</div>
+
+
+		<div class="main-wrap">
+			<div class="main">
+				<header class="main__header">
+					<a class="logo" href="https://somnifix.com/">
+						<img alt="SomniFix" class="logo__image" src="assets/images/logo.png">
+					</a>
+
+					<div class="dynamic-checkout">
+						<h2 class="dynamic-checkout__title">
+							Express checkout
+						</h2>
+						<div class="dynamic-checkout__content">
+							<div class="dynamic-checkout__buttons">
+
+								<!-- buy buttons -->
+								<div class="shop-pay" role="button">
+									<span>ShopPay</span>
+								</div>
+								<div></div>
+								<div></div>
+								<div></div>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="alternative-payment-separator">
+						<span class="separator__content">OR</span>
+					</div>
+				</header>
+
+				
+
+
+
+				<div class="main__content">
+
+					<div class="high-demand">
+						<div class="img-holder">
+							<img alt="fire" class="fire__image" src="assets/images/flame_24.png">
+						</div>
+						<div class="text-holder">
+							<p>An item you ordered is in high demand!!</p>
+						</div>
+					</div>
+
+					<div class="timer-holder">
+						<p class="text-count">Your order is reserved for <span class="counter">10:00</span> minutes!</p>
+
+
+						<p class="text-ended is-hide">Order reservation ended.</p>
+					</div>
+
+
+					<!-- form -->
+					<div class="step form-holder" data-step="contact_information" data-last-step="false">
+						<form class="edit_checkout animate-floating-labels" novalidate="novalidate" method="post">
+							<div class="step__sections">
+								<div class="contact-information">
+									<div class="section__header">
+										<h2 class="form-title">Contact information</h2>
+										<p class="layout-flex__item">Already have an account? <a href="#">Log in</a></p>
+									</div>
+
+									<div class="section__content">
+										<div class="fieldset">
+											<div class="field">
+												<label class="field__label field__label--visible" for="checkout_email">Email</label>
+												<input placeholder="Email" class="field__input" type="email" name="checkout[email]" id="checkout_email">
+											</div>
+										</div>
+
+										<div class="fieldset-description">
+											<div class="checkbox-wrapper">
+												<div class="checkbox__input">
+													<input class="input-checkbox" type="checkbox" value="1" name="checkout[buyer_accepts_marketing]" id="checkout_buyer_accepts_marketing">
+												</div>
+												<label class="checkbox__label" for="checkout_buyer_accepts_marketing">Keep me up to date on news and exclusive offers</label>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+
+								<div class="shipping-address">
+									<div class="section__header">
+										<h2 class="form-title delivery-title">Shipping address</h2>
+									</div>
+
+									<div class="section__content">
+										<div class="fieldset">
+											
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</form>
+					</div>
+
+				</div>
+				
+			</div>
+
+			<aside class="sidebar">
+				
+			</aside>
+		</div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.sidebar {
+	position: relative;
+    color: #535353;
+	@media (min-width: 1000px){
+		padding: 56px 0 0 0;
+		width: 38%;
+		padding-left: 4%;
+		background-position: left top;
+	}
+}

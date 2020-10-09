@@ -1,0 +1,19 @@
+.form-holder {
+	.section__header {
+		margin-bottom: 21px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.layout-flex__item {
+			padding: 2px 9px;
+			a {
+				color: #68cad9;
+			}
+		}
+	}
+	.form-title {
+		font-size: 18px;
+		padding: 2px 9px;
+		margin: 0;
+	}
+}
