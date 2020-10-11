@@ -123,9 +123,200 @@
 											
 										</div>
 									</div>
+
+
+
+									<div class="field--half field field--required field--error" data-address-field="first_name">
+										<label class="field__label" for="checkout_shipping_address_first_name">First name</label>
+										<div class="field__input-wrapper">
+											<input placeholder="First name" autocomplete="shipping given-name" autocorrect="off" data-backup="first_name" class="field__input" aria-describedby="error-for-first_name" aria-invalid="true" aria-required="true" size="30" type="text" value="" name="checkout[shipping_address][first_name]" id="checkout_shipping_address_first_name" />
+										</div>
+										<p class="field__message field__message--error" id="error-for-first_name">Enter a first name</p>
+									</div>
+
+									<div class="field--half field field--required field--error" data-address-field="last_name">
+									    <label class="field__label" for="checkout_shipping_address_last_name">Last name</label>
+									    <div class="field__input-wrapper">
+									    	<input placeholder="Last name" autocomplete="shipping family-name" autocorrect="off" data-backup="last_name" class="field__input" aria-describedby="error-for-last_name" aria-invalid="true" aria-required="true" size="30" type="text" value="" name="checkout[shipping_address][last_name]" id="checkout_shipping_address_last_name" />
+									    </div>
+										<p class="field__message field__message--error" id="error-for-last_name">Enter a last name</p>
+									</div>
+
+									<div data-address-field="company" data-autocomplete-field-container="true" class="field field--optional">
+										<label class="field__label" for="checkout_shipping_address_company">Company (optional)</label>
+										<div class="field__input-wrapper">
+											<input placeholder="Company (optional)" autocomplete="shipping organization" autocorrect="off" data-backup="company" class="field__input" size="30" type="text" value="" name="checkout[shipping_address][company]" id="checkout_shipping_address_company" />
+										</div>
+									</div>
+
+
+									<div data-address-field="address1" data-autocomplete-field-container="true" class="field field--required field--error">
+										<label class="field__label" for="checkout_shipping_address_address1">Address</label>
+									    <div class="field__input-wrapper">
+									        <input placeholder="Address" autocomplete="shipping address-line1" autocorrect="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-describedby="error-for-address1" aria-invalid="true" aria-required="true" data-backup="address1" data-autocomplete-trigger="true" data-autocomplete-title="Suggestions" data-autocomplete-single-item="1 item available" data-autocomplete-multi-item="{{number}} items available" data-autocomplete-item-selection="{{number}} of {{total}}" data-autocomplete-close="Close suggestions" class="field__input" size="30" type="text" value="" name="checkout[shipping_address][address1]" id="checkout_shipping_address_address1" />
+
+											<p class="field__additional-info visually-hidden" data-address-civic-number-warning>
+												<svg class="icon-svg icon-svg--size-16 field__message__icon" aria-hidden="true" focusable="false"> <use xlink:href="#info" /> </svg>
+									        	Add a house number if you have one
+											</p>
+									    </div>
+										<p class="field__message field__message--error" id="error-for-address1">Enter an address</p>
+									</div>
+
+
+									<div data-address-field="address2" data-autocomplete-field-container="true" class="field field--optional">
+										<label class="field__label" for="checkout_shipping_address_address2">Apartment, suite, etc. (optional)</label>
+										<div class="field__input-wrapper">
+											<input placeholder="Apartment, suite, etc. (optional)" autocomplete="shipping address-line2" autocorrect="off" data-backup="address2" class="field__input" size="30" type="text" value="" name="checkout[shipping_address][address2]" id="checkout_shipping_address_address2" />
+										</div>
+									</div>
+
+
+									<div data-address-field="city" data-autocomplete-field-container="true" class="field field--required field--error">
+										<label class="field__label" for="checkout_shipping_address_city">City</label>
+										<div class="field__input-wrapper">
+											<input placeholder="City" autocomplete="shipping address-level2" autocorrect="off" data-backup="city" class="field__input" aria-describedby="error-for-city" aria-invalid="true" aria-required="true" size="30" type="text" value="" name="checkout[shipping_address][city]" id="checkout_shipping_address_city" />
+										</div>
+										<p class="field__message field__message--error" id="error-for-city">Enter a city</p>
+									</div>
+
+
+
+
+									<div class="field--third field field--required" data-address-field="country" data-autocomplete-field-container="true">
+										<label class="field__label" for="checkout_shipping_address_country">Country/Region</label>
+										<div class="field__input-wrapper field__input-wrapper--select">
+											<select size="1" autocomplete="shipping country" data-backup="country" class="field__input field__input--select" aria-required="true" name="checkout[shipping_address][country]" id="checkout_shipping_address_country">
+												<option data-code="US" value="United States">United States</option>
+												<option data-code="AU" value="Australia">Australia</option>
+												<option data-code="GB" value="United Kingdom">United Kingdom</option>
+												<option data-code="CA" value="Canada">Canada</option>
+												<option disabled="disabled" value="---">---</option>
+												<option data-code="AX" value="Aland Islands">Åland Islands</option>
+												<option data-code="AL" value="Albania">Albania</option>
+												<option data-code="AD" value="Andorra">Andorra</option>
+												<option data-code="AM" value="Armenia">Armenia</option>
+												<option data-code="AU" value="Australia">Australia</option>
+												<option data-code="AT" value="Austria">Austria</option>
+												<option data-code="BY" value="Belarus">Belarus</option>
+												<option data-code="BE" value="Belgium">Belgium</option>
+												<option data-code="BA" value="Bosnia And Herzegovina">Bosnia &amp; Herzegovina</option>
+												<option data-code="BV" value="Bouvet Island">Bouvet Island</option>
+												<option data-code="BG" value="Bulgaria">Bulgaria</option>
+												<option data-code="CA" value="Canada">Canada</option>
+												<option data-code="HR" value="Croatia">Croatia</option>
+												<option data-code="CY" value="Cyprus">Cyprus</option>
+												<option data-code="CZ" value="Czech Republic">Czechia</option>
+												<option data-code="DK" value="Denmark">Denmark</option>
+												<option data-code="EE" value="Estonia">Estonia</option>
+												<option data-code="FO" value="Faroe Islands">Faroe Islands</option>
+												<option data-code="FI" value="Finland">Finland</option>
+												<option data-code="FR" value="France">France</option>
+												<option data-code="GE" value="Georgia">Georgia</option>
+												<option data-code="DE" value="Germany">Germany</option>
+												<option data-code="GI" value="Gibraltar">Gibraltar</option>
+												<option data-code="GR" value="Greece">Greece</option>
+												<option data-code="GL" value="Greenland">Greenland</option>
+												<option data-code="GP" value="Guadeloupe">Guadeloupe</option>
+												<option data-code="GG" value="Guernsey">Guernsey</option>
+												<option data-code="HU" value="Hungary">Hungary</option>
+												<option data-code="IS" value="Iceland">Iceland</option>
+												<option data-code="IE" value="Ireland">Ireland</option>
+												<option data-code="IM" value="Isle Of Man">Isle of Man</option>
+												<option data-code="IT" value="Italy">Italy</option>
+												<option data-code="JE" value="Jersey">Jersey</option>
+												<option data-code="XK" value="Kosovo">Kosovo</option>
+												<option data-code="LV" value="Latvia">Latvia</option>
+												<option data-code="LI" value="Liechtenstein">Liechtenstein</option>
+												<option data-code="LT" value="Lithuania">Lithuania</option>
+												<option data-code="LU" value="Luxembourg">Luxembourg</option>
+												<option data-code="MT" value="Malta">Malta</option>
+												<option data-code="YT" value="Mayotte">Mayotte</option>
+												<option data-code="MC" value="Monaco">Monaco</option>
+												<option data-code="ME" value="Montenegro">Montenegro</option>
+												<option data-code="NL" value="Netherlands">Netherlands</option>
+												<option data-code="NZ" value="New Zealand">New Zealand</option>
+												<option data-code="NO" value="Norway">Norway</option>
+												<option data-code="PL" value="Poland">Poland</option>
+												<option data-code="PT" value="Portugal">Portugal</option>
+												<option data-code="RE" value="Reunion">Réunion</option>
+												<option data-code="RO" value="Romania">Romania</option>
+												<option data-code="SM" value="San Marino">San Marino</option>
+												<option data-code="RS" value="Serbia">Serbia</option>
+												<option data-code="SK" value="Slovakia">Slovakia</option>
+												<option data-code="SI" value="Slovenia">Slovenia</option>
+												<option data-code="ES" value="Spain">Spain</option>
+												<option data-code="SJ" value="Svalbard And Jan Mayen">Svalbard &amp; Jan Mayen</option>
+												<option data-code="SE" value="Sweden">Sweden</option>
+												<option data-code="CH" value="Switzerland">Switzerland</option>
+												<option data-code="TR" value="Turkey">Turkey</option>
+												<option data-code="UA" selected="selected" value="Ukraine">Ukraine</option>
+												<option data-code="GB" value="United Kingdom">United Kingdom</option>
+												<option data-code="US" value="United States">United States</option>
+												<option data-code="VA" value="Holy See (Vatican City State)">Vatican City</option>
+											</select>
+											<div class="field__caret">
+												<svg class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-10 field__caret-svg" role="presentation" aria-hidden="true" focusable="false"> <use xlink:href="#caret-down" /> </svg>
+											</div>
+									    </div>
+									</div>
+
+
+
+									<div class="field--third field field--required" data-address-field="province" data-autocomplete-field-container="true">
+										<label class="field__label" for="checkout_shipping_address_province">Region</label>
+										<div class="field__input-wrapper field__input-wrapper--select">
+											<input placeholder="Region" autocomplete="shipping address-level1" autocorrect="off" data-backup="province" class="field__input" aria-required="true" type="text" name="checkout[shipping_address][province]" id="checkout_shipping_address_province" />
+											<div class="field__caret shown-if-js">
+												<svg class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-10 field__caret-svg" role="presentation" aria-hidden="true" focusable="false"> <use xlink:href="#caret-down" /> </svg>
+											</div>
+										</div>
+									</div>
+
+
+									<div class="field--third field field--required field--error" data-address-field="zip" data-autocomplete-field-container="true">
+										<label class="field__label" for="checkout_shipping_address_zip">Postal code</label>
+										<div class="field__input-wrapper">
+											<input placeholder="Postal code" autocomplete="shipping postal-code" autocorrect="off" data-backup="zip" data-autocomplete-trigger="true" data-autocomplete-title="Suggestions" data-autocomplete-single-item="1 item available" data-autocomplete-multi-item="{{number}} items available" data-autocomplete-item-selection="{{number}} of {{total}}" data-autocomplete-close="Close suggestions" class="field__input field__input--zip" aria-describedby="error-for-zip" aria-invalid="true" aria-required="true" size="30" type="text" value="" name="checkout[shipping_address][zip]" id="checkout_shipping_address_zip" />
+										</div>
+										<p class="field__message field__message--error" id="error-for-zip">Enter a ZIP / postal code</p>
+									</div>
+
+
+									<div data-address-field="phone" class="field field--required field--error">
+										<label class="field__label" for="checkout_shipping_address_phone">Phone</label>
+										<div class="field__input-wrapper field__input-wrapper--icon-right">
+											<input placeholder="Phone" autocomplete="shipping tel" autocorrect="off" data-backup="phone" data-phone-formatter="true" data-phone-formatter-country-select="[name=&#39;checkout[shipping_address][country]&#39;]" aria-describedby="tooltip-for-phone error-for-phone" aria-invalid="true" aria-required="true" class="field__input field__input--numeric" size="30" type="tel" value="" name="checkout[shipping_address][phone]" id="checkout_shipping_address_phone" />
+											<div class="field__icon">
+												<div data-tooltip="true" id="phone_tooltip" class="tooltip-container">
+													<button type="button" class="tooltip-control" data-tooltip-control="true" aria-label="More information" aria-describedby="tooltip-for-phone" aria-controls="tooltip-for-phone" aria-pressed="false"><svg class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-16 icon-svg--block icon-svg--center" role="presentation" aria-hidden="true" focusable="false"> <use xlink:href="#question" /> </svg></button>
+													<span class="tooltip" role="tooltip" id="tooltip-for-phone">In case we need to contact you about your order</span>
+												</div>
+											</div>
+										</div>
+										<p class="field__message field__message--error" id="error-for-phone">Enter a valid phone number</p>
+									</div>
+
+
+
 								</div>
 
 							</div>
+
+
+
+
+							<div class="step__footer" data-step-footer>
+								<button name="button" type="submit" id="continue_button" class="step__footer__continue-btn btn" aria-busy="false"><span class="btn__content" data-continue-button-content="true">Continue to shipping</span><svg class="icon-svg icon-svg--size-18 btn__spinner icon-svg--spinner-button" aria-hidden="true" focusable="false"> <use xlink:href="#spinner-button" /> </svg></button>
+								<a class="step__footer__previous-link" href="https://somnifix.com/cart">
+									<svg focusable="false" aria-hidden="true" class="icon-svg icon-svg--color-accent icon-svg--size-10 previous-link__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M8 1L7 0 3 4 2 5l1 1 4 4 1-1-4-4"/></svg>
+									<span class="step__footer__previous-link-content">Return to cart</span>
+								</a>
+							</div>
+
+
+
+
 						</form>
 					</div>
 
