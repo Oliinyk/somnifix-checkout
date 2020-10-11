@@ -1,6 +1,6 @@
 .form-holder {
 	.section__header {
-		margin-bottom: 21px;
+		margin-bottom: 15px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -13,7 +13,284 @@
 	}
 	.form-title {
 		font-size: 18px;
+		font-weight: normal;
 		padding: 2px 9px;
 		margin: 0;
 	}
+	.fieldset {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.field__input-wrapper--icon-right {
+		.field__input {
+			padding-right: 45px;
+		}
+		.field__icon {
+			right: 0;
+		}
+	}
+	.field__input--select {
+		padding-right: 29px;
+		white-space: nowrap;
+		appearance: none;
+	}
+	option {
+		background-color: #fff;
+		color: #000;
+	}
+	.field__caret {
+		border-left: 1px rgba(179,179,179,0.5) solid;
+	}
+	.step__footer {
+		z-index: 2;
+		position: relative;
+		margin-top: 14px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		justify-content: flex-end;
+		@media (min-width: 750px){
+			margin-top: 21px;
+		}
+		.continue-btn {
+
+		}
+	}
+	.fieldset-description {
+		margin-top: 13px;
+		padding: 0 6px;
+	}
+	.checkbox-wrapper {
+		display: flex;
+		align-items: center;
+	}
+	
+}
+.field {
+	width: 100%;
+	padding: 6px;
+}
+.field--half {
+	@media (min-width: 750px){
+		width: 50%;
+	}
+}
+.field--third {
+	@media (min-width: 750px){
+		width: 33.33%;
+	}
+}
+// field--active
+.field--active {
+	.field__label {
+		color: #545454;
+	}
+}
+.field__input:focus, 
+.field__input-wrapper--flag-focus .field__input {
+	outline: none;
+	border-color: #68cad9;
+	box-shadow: 0 0 0 1px #68cad9;
+}
+.visually-hidden {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	clip: rect(0 0 0 0);
+	width: 2px;
+	height: 2px;
+	margin: -2px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+}
+.field__additional-info {
+	line-height: 1.3em;
+	margin: 0.75em 0 0.25em;
+	color: #333333;
+}
+.field__message__icon {
+	margin-right: 0.25em;
+	vertical-align: -3px;
+}
+.field__input-wrapper {
+	position: relative;
+}
+.field__label {
+	color: #737373;
+	font-size: 12px;
+	font-weight: normal;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	margin: 5px 0 6px;
+	padding: 0 11px;
+	z-index: 1;
+	user-select: none;
+	transform: translateY(3px);
+	pointer-events: none;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+	opacity: 0;
+}
+.field__input {
+	background-color: #fff;
+	color: #333333;
+	border: 1px #d9d9d9 solid;
+	background-clip: padding-box;
+	border-radius: 5px;
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 13px 11px;
+	word-break: normal;
+	line-height: inherit;
+	&.error {
+		border-color: $errorColor;
+		box-shadow: 0 0 0 1px $errorColor;
+	}
+}
+label {
+	&.error {
+		color: $errorColor;
+		margin: 8px 0 4px;
+		display: block;
+	}
+}
+.field__caret {
+	display: block;
+	width: 31px;
+	height: 43%;
+	pointer-events: none;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate(0%, -50%);
+}
+.field__caret-svg {
+	position: absolute;
+	margin-left: -2px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.field__icon {
+	display: block;
+	position: absolute;
+	top: 0;
+	height: 43px;
+	width: 45px;
+}
+
+.checkbox__input {
+	padding-right: 10px;
+}
+.input-checkbox {
+	width: 18px;
+	height: 18px;
+	box-shadow: 0 0 0 0 #68cad9 inset;
+	transition: all 0.2s ease-in-out;
+	position: relative;
+	cursor: pointer;
+	vertical-align: -4px;
+	border: 1px solid #d9d9d9;
+	border-radius: 4px;
+	margin: 0;
+	&:after {
+		width: 10px;
+		height: 8px;
+		margin-left: -5px;
+		margin-top: -4px;
+
+		background-image: url('../images/checkbox-tick.png');
+		background-image: url('../images/checkbox-tick.svg'),none;
+	}
+}
+.input-checkbox, 
+.input-radio {
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: scale(0.2);
+		transition: all 0.2s ease-in-out 0.1s;
+		opacity: 0;
+	}
+	&:checked {
+		border: none;
+		box-shadow: 0 0 0 10px #68cad9 inset;
+		&:after {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+}
+.shipping-address {
+	padding: 42px 0 0;
+}
+
+
+
+
+
+
+.animate-floating-labels {
+	.field__label {
+		transition: all 0.2s ease-out;
+	}
+	.field__input {
+		transition: all 0.2s ease-out;
+	}
+}
+
+
+.floating-labels {
+	.field--show-floating-label {
+		.field__label {
+			transform: none;
+			opacity: 1;
+		}
+		.field__input {
+			padding: 21px 11px 5px;
+		}
+	}
+	.field__input-wrapper--icon-right {
+		.field__label {
+			padding-right: 45px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.payment-card-holder {
+	width:100%;
+	display:block;
+	padding-top:10px;
+}
+.payment-card-title {
+	font-size:11px;
+	font-style: italic;
+	float:right;
+	line-height: 1.1;
+	text-align: right;
+	width:100%;
+}
+.payment-img {
+	max-width:250px;
+	float: right;
+	margin-top: 5px;
 }

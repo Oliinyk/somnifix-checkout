@@ -12,6 +12,9 @@ textarea, input {
 		color: #A0A0A0;
 	}
 }
+label {
+	cursor: pointer;
+}
 img {image-orientation: from-image;}
 html, body {
 	background-color: $white;
@@ -23,17 +26,36 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 	font-size: 14px;
 	color: #545454;
+	overflow-x: hidden;
 }
-a, a:hover, a:focus {
-	color: inherit;
-	transition: color 0.2s ease-in-out;
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 14px;
+	td, th {
+		padding: 0;
+		font-weight: normal;
+	}
+}
+a, .link {
 	text-decoration: none;
-}
-a:hover, button:hover {opacity: 0.7;}
-button, button:hover {
+	color: #68cad9;
 	transition: color 0.2s ease-in-out;
-	outline: none;
+	&:hover {
+		color: #4bc0d2;
+	}
 }
+.btn {
+	outline: none;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+}
+.btn:hover {
+	background-color: #3fbccf;
+	color: #15282b;
+}
+
+
+
 p {margin:0;}
 
 ul {margin:0;padding:0;list-style:none;}
@@ -59,17 +81,172 @@ input:-webkit-autofill:active {
 
 
 .wrap {
-    margin: 0 auto;
-    @media (min-width: 1000px){
-        padding: 0 5%;
-        width: 90%;
-        max-width: 78.5714285714em;
-    }
+	margin: 0 auto;
+	@media (min-width: 1000px){
+		padding: 0 5%;
+		width: 90%;
+		max-width: 1230px;
+	}
 }
 .main-wrap {
 	display: flex;
 }
 .main h2, 
 .main .heading-2 {
-    color: #333;
+	color: #333;
 }
+.tooltip-container {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	.tooltip-control {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		.icon-svg--color-adaptive-lighter {
+			color: #919191;
+			fill: #919191;
+		}
+	}
+}
+.tooltip {
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 80%;
+	right: -0.3333333333em;
+	width: 180px;
+	margin: 0 0 5px 0;
+	padding: 9px 12px;
+	border-radius: 4px;
+	white-space: normal;
+	font-size: 0.8571428571em;
+	font-style: normal;
+	text-align: center;
+	color: #fff;
+	display: block;
+	z-index: 200;
+	transition: all 0.3s cubic-bezier(0.3, 0, 0, 1);
+	transform: rotateX(20deg) scale(0.8);
+	transform-origin: 90% 120%;
+	background-color: rgba(51,51,51,0.9);
+	visibility: hidden;
+	opacity: 0;
+	@media (min-width: 750px) {
+		transform-origin: center 120%;
+		right: 50%;
+		margin-right: -90px;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		top: 100%;
+		right: 18px;
+		width: 0;
+		border: 6px solid transparent;
+		border-top-color: rgba(51,51,51,0.9);
+		@media (min-width: 750px){
+			right: 50%;
+			margin-right: -6px;
+		}
+	}
+}
+.tooltip-container.show-tooltip .tooltip, 
+.tooltip-container:hover .tooltip, 
+.tooltip-container:focus .tooltip, 
+.has-tooltip.show-tooltip .tooltip, 
+.has-tooltip:hover .tooltip, 
+.has-tooltip:focus .tooltip {
+	transform: rotateX(0deg) scale(1);
+	pointer-events: auto;
+	visibility: visible;
+	opacity: 1;
+}
+.btn {
+	display: inline-block;
+	background-color: #68cad9;
+	border: 1px transparent solid;
+	border-radius: 5px;
+	color: #15282b;
+	cursor: pointer;
+	font-weight: 500;
+	padding: 19px 23px;
+	position: relative;
+	// transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	&__content {
+		position: relative;
+		transition: opacity 0.3s ease-in-out;
+	}
+	&__spinner {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -10px;
+		margin-left: -10px;
+		transition: opacity 0.3s ease-in-out;
+		opacity: 0;
+	}
+}
+.btn--loading {
+	pointer-events: none;
+	cursor: default;
+	.btn__content,
+	.btn__icon {
+		opacity: 0;
+	}
+	.btn__spinner {
+		animation: rotate 0.5s linear infinite;
+		opacity: 1;
+	}
+}
+
+.icon-svg {
+	display: inline-block;
+}
+.icon-svg--color-adaptive-lighter {
+	color: #919191;
+	fill: #919191;
+}
+.icon-svg--spinner-button {
+	width: 20px;
+	height: 20px;
+}
+.icon-svg--size-10 {
+	width: 10px;
+	height: 10px;
+}
+.icon-svg--size-16 {
+	width: 16px;
+	height: 16px;
+}
+.icon-svg--size-18 {
+	width: 18px;
+	height: 18px;
+}
+
+@media (min-width: 750px){
+	.shown-on-mobile {
+		display: none;
+	}
+}
+
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
+
+
+
+// 1em = 14px
+// font-size: 0.8571428571em = font-size: 12px;
+// font-size: 1.7142857143em  = font-size: 24px;

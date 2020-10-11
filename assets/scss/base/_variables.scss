@@ -15,9 +15,9 @@ $container-max-widths: (
 );
 
 // fonts
-$proxima: "proxima-nova",sans-serif;
-$proxima-condensed: "proxima-nova-condensed",sans-serif;
-$proxima-extra-condensed: "proxima-nova-extra-condensed",sans-serif;
+// $proxima: "proxima-nova",sans-serif;
+// $proxima-condensed: "proxima-nova-condensed",sans-serif;
+// $proxima-extra-condensed: "proxima-nova-extra-condensed",sans-serif;
 
 // colours
 $white: #fff;
@@ -30,10 +30,11 @@ $lightgrey: #626365;
 $gray: #BEBEBE;
 $midgrey: #CDD1DC;
 $darkgrey: #161922;
-
-
 $blueviolet: #9147ff;
 $steelblue: #4267b2;
 $darkcyan: #0077b5;
 $dodgerblue: #1ea1f1;
 $mediumvioletred: #cf1a6d;
+
+
+$errorColor: #e32c2b;

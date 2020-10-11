@@ -21,6 +21,18 @@
             max-height: 60px;
         }
     }
+    .main__footer {
+        padding: 14px 0;
+        border-top: 1px solid #e6e6e6;
+    }
+    .policy-list {
+        text-align: left;
+    }
+    .policy-list__item {
+        font-size: 12px;
+        margin-right: 18px;
+        margin-bottom: 6px;
+    }
 }
 
 .alternative-payment-separator {
