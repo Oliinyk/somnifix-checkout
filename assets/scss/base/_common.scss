@@ -21,9 +21,9 @@ html, body {
 	max-width: 100%;
 	position: relative;
 	margin: 0;
+	font-family: $main_font;
 }
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 	font-size: 14px;
 	color: #545454;
 	overflow-x: hidden;
@@ -45,16 +45,6 @@ a, .link {
 		color: #4bc0d2;
 	}
 }
-.btn {
-	outline: none;
-	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
-}
-.btn:hover {
-	background-color: #3fbccf;
-	color: #15282b;
-}
-
-
 
 p {margin:0;}
 
@@ -75,11 +65,15 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
 	transition: background-color 5000s ease-in-out 0s;
 }
-.is-hide {
-	display: none;
+.small-text {
+	font-size: 12px
 }
-
-
+.address {
+	font-style: normal;
+}
+.is-hide {
+	display: none !important;
+}
 .wrap {
 	margin: 0 auto;
 	@media (min-width: 1000px){
@@ -171,11 +165,12 @@ input:-webkit-autofill:active {
 	border-radius: 5px;
 	color: #15282b;
 	cursor: pointer;
-	font-weight: 500;
+	font-weight: 600;
 	padding: 19px 23px;
 	position: relative;
-	// transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	outline: none;
 	transition: all 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 	&__content {
 		position: relative;
 		transition: opacity 0.3s ease-in-out;
@@ -188,6 +183,10 @@ input:-webkit-autofill:active {
 		margin-left: -10px;
 		transition: opacity 0.3s ease-in-out;
 		opacity: 0;
+	}
+	&:hover {
+		background-color: #3fbccf;
+		color: #15282b;
 	}
 }
 .btn--loading {
@@ -203,6 +202,101 @@ input:-webkit-autofill:active {
 	}
 }
 
+.form-holder {
+	.mail-fieldset {
+		display: block;
+		.logged & {
+			display: none;
+		}
+	}
+}
+.logged-customer-information {
+	.logged & {
+		display: flex;
+	}
+	display: none;
+	align-items: center;
+	.avatar-wrapper {
+		padding: 0 14px 0 0;
+	}
+	.customer__avatar {
+		background-size: cover;
+		position: relative;
+		max-width: none;
+		width: 50px;
+		height: 50px;
+		border-radius: 8px;
+		overflow: hidden;
+		background-image: url('../images/avatar.png');
+	}
+}
+
+.step__footer {
+	z-index: 2;
+	position: relative;
+	margin-top: 14px;
+	@media (min-width: 750px){
+		margin-top: 21px;
+	}
+	.step-customer,
+	.step-shipping,
+	.step-payment {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.previous-link {
+		margin-right: 14px;
+		svg {
+			fill: #4bc0d2;
+			margin-right: 4px;
+		}
+	}
+}
+
+.tags-list {
+	display: flex;
+	flex-wrap: wrap;
+	.tag {
+		margin-top: 10px;
+		padding: 10px;
+		border-radius: 4px;
+		background-color: rgba(113,113,113,0.11);
+		color: #717171;
+		font-size: 12px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		&__text {
+			color: #323232;
+			font-size: 14px;
+			font-weight: 500;
+			overflow: hidden;
+			display: inline-block;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+	.tag__button {
+		background-color: transparent;
+		margin-left: 10px;
+		border: 0;
+		cursor: pointer;
+		padding: 0;
+		line-height: 1;
+		.icon-svg {
+			stroke: rgba(113,113,113,0.9);
+		}
+	}
+	.icon-svg {
+		fill: $currentcolor;
+	}
+}
+.reduction-code__icon {
+	margin-right: 2px;
+	vertical-align: top;
+}
 .icon-svg {
 	display: inline-block;
 }
@@ -218,6 +312,10 @@ input:-webkit-autofill:active {
 	width: 10px;
 	height: 10px;
 }
+.icon-svg--size-12 {
+	width: 12px;
+	height: 12px;
+}
 .icon-svg--size-16 {
 	width: 16px;
 	height: 16px;
@@ -232,8 +330,6 @@ input:-webkit-autofill:active {
 		display: none;
 	}
 }
-
-
 @keyframes rotate {
 	0% {
 		transform: rotate(0);

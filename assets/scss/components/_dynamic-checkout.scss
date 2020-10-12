@@ -37,4 +37,8 @@
         border-bottom-right-radius: 5px;
         padding: 13px 20px 20px 20px;
     }
+
+    .secondStep & {
+        display: none;
+    }
 }

@@ -10,7 +10,8 @@
 	&::after {
 		content: "";
 		display: block;
-		width: 300%;
+		// width: 300%;
+		width: calc(100vw/2);
 		position: absolute;
 		top: 0;
 		left: -100%;
@@ -179,6 +180,7 @@
 	}
 	.btn--disabled {
 		cursor: default;
+		pointer-events: none;
 		background: #c8c8c8;
 		box-shadow: none;
 	}
@@ -198,6 +200,9 @@
 				text-align: right;
 				padding-top: 10px;
 			}
+		}
+		.reduction-code {
+			margin-left: 8px;
 		}
 	}
 	.total-line__price {
@@ -293,5 +298,8 @@
 		vertical-align:middle;
 		width:100%;
 		border-spacing:0px 20px;
+	}
+	.icon-svg--color-adaptive-light {
+	    fill: currentColor;
 	}
 }

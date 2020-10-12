@@ -21,10 +21,6 @@ $(document).ready(function(){
 	  }
 	}, 1000);
 
-
-
-
-
 	// modals
 	$(document).on("click", ".modal-toggle", function(e){
 		e.preventDefault();
@@ -37,11 +33,10 @@ $(document).ready(function(){
 		$('body').removeClass('modal-open');
 	});
 
-
 	//rule for phone number
 	$.validator.addMethod("phoneno", function(value, element) {
 		return value.match(/^\+(?:[0-9] ?){6,14}[0-9]$/) || value.match(/^(?:[0-9] ?){6,14}[0-9]$/);
-	},"Enter Valid  phone number");
+	},"Enter a valid phone number");
 
 	// modal validation
 	$(".validateJs").each(function() {
@@ -72,40 +67,62 @@ $(document).ready(function(){
 					required: true,
 					phoneno: true 
 				},
-				
-				
-				// street: {
-				// 	required: true
-				// },
-				// select: {
-				// 	required: true,
-				// 	valueNotEquals: "default" 
-				// },
+				discount: {
+					required: true,
+					discount: true 
+				},
 				optional: {
 					required: false
 				}
 			},
 			messages: {
 				required: 'This field is required',
-
-				// email: 'Enter a valid email',
 				email: 'Enter a valid email',
 				firstName: 'Enter a first name',
 				lastName: 'Enter a last name',
 				address: 'Enter an address',
 				city: 'Please enter a valid city',
 				zip: 'Enter a ZIP / postal code',
-				phone: 'Enter a valid phone number',
-				
-				// street: 'Please enter a valid street',
-				// select: { 
-				// 	valueNotEquals: "Please select an item" 
-				// }
+				phone: 'Enter a valid phone number'
 			},
-			submitHandler: function (form) { // for demo
-				form.submit();	
+			submitHandler: function (form) {
+				// form.submit();
+
+				$('body').addClass('secondStep');
+				$('body').find('.customer_bar').addClass('finished');
+				$('body').find('.shipping_bar').addClass('active');
+				
+				$('body').find('.step__footer .step-customer').addClass('is-hide');
+				$('body').find('.step__footer .step-shipping').removeClass('is-hide');
+
+
+				var stepMail = $('body').find('.edit_checkout input[type=email]').val();
+				$('body').find('.shippingMailJs').text(stepMail);
+
+				var checkout_company = $('body').find('.edit_checkout #checkout_company').val() ;
+				var checkout_address = $('body').find('.edit_checkout #checkout_address1').val();
+				var checkout_apartment = $('body').find('.edit_checkout #checkout_address2').val();
+				var checkout_zip = $('body').find('.edit_checkout #checkout_zip').val();
+				var checkout_city = $('body').find('.edit_checkout #checkout_city').val();
+				var checkout_country = $('body').find('.edit_checkout #checkout_country').val();
+				if(checkout_company.length > 0){
+					checkout_company += ', ';
+				}
+				if(checkout_apartment.length > 0){
+					checkout_apartment += ', ';
+				}
+
+				$('body').find('.shippingInfoJs').text(checkout_company + checkout_address + ', ' + checkout_apartment + checkout_zip + checkout_city + ', ' + checkout_country);
+				
 			}
 		})
+	});
+
+
+
+	// discount code
+	$.validator.addMethod("discount", function(value, element) {
+	    return this.optional(element) || /^\bCRAFTON\b$/.test(value);
 	});
 
 	$(".validateReduction").each(function() {
@@ -113,21 +130,39 @@ $(document).ready(function(){
 			rules: {
 				reduction_code: {
 					required: true,
-					digits: true
+					discount: true 
 				}
 			},
 			messages: {
 				reduction_code: 'Enter a valid discount code or gift card',
 			},
 			submitHandler: function (form) {
-
+				$('body').find('.tags-list').removeClass('is-hide');
+				$('body').find('.discountTagJs').text($('.field__input[name="reduction_code"]').val());
+				$('body').find('.discountRowJs').removeClass('is-hide');
 			}
 		})
 	});
 
+	$(document).on('click', '.discountRemoveJs', function() {
+		$('body').find('.tags-list').addClass('is-hide');
+		$('body').find('.discountRowJs').addClass('is-hide');
+	});
 
 
-	$(document).on('input', '#reduction_code', function() { 
+
+
+	// label
+	$(document).on('input', 'form input', function() {
+		if( $(this).val().length > 0 ){
+			$(this).closest('.field').addClass('field--show-floating-label');
+		} else {
+			$(this).closest('.field').removeClass('field--show-floating-label');
+		}
+	});
+
+	// discount code
+	$(document).on('input', '#reduction_code', function() {
 		if( $(this).val().length > 0 ){
 			$(this).closest('.field__wrapper').find('.field__input-btn').removeClass('btn--disabled');
 		} else {
@@ -135,5 +170,37 @@ $(document).ready(function(){
 		}
 	}); 
 
+	// Return to step 1(Information)
+	$(document).on('click', '.RtoIJs, .changeCustomerJs', function() {
+		$('body').removeClass('secondStep');
+		$('body').find('.step__footer .step-customer').removeClass('is-hide');
+		$('body').find('.step__footer .step-shipping').addClass('is-hide');
+		$('body').find('.edit_checkout input[type=email]').focus();
+
+
+		$('body').find('.customer_bar').removeClass('finished');
+		$('body').find('.shipping_bar').removeClass('active');
+	});
+
+
+
+	// Go to step 3
+	$(document).on('click', '.toPaymentBtnJs', function() {
+		$('body').find('.shipping_bar').addClass('finished');
+		$('body').find('.payment_bar').addClass('active');
+
+		$('body').find('.step__footer .step-shipping').addClass('is-hide');
+		$('body').find('.step__footer .step-payment').removeClass('is-hide');
+	});
+
+	
+	// Return to step 2(Shipping)
+	$(document).on('click', '.RtoSJs', function() {
+		$('body').find('.shipping_bar').removeClass('finished');
+		$('body').find('.payment_bar').removeClass('active');
+
+		$('body').find('.step__footer .step-shipping').removeClass('is-hide');
+		$('body').find('.step__footer .step-payment').addClass('is-hide');
+	});
 	
 });

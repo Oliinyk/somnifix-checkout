@@ -6,9 +6,6 @@
 		justify-content: space-between;
 		.layout-flex__item {
 			padding: 2px 9px;
-			a {
-				color: #68cad9;
-			}
 		}
 	}
 	.form-title {
@@ -41,21 +38,6 @@
 	.field__caret {
 		border-left: 1px rgba(179,179,179,0.5) solid;
 	}
-	.step__footer {
-		z-index: 2;
-		position: relative;
-		margin-top: 14px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		justify-content: flex-end;
-		@media (min-width: 750px){
-			margin-top: 21px;
-		}
-		.continue-btn {
-
-		}
-	}
 	.fieldset-description {
 		margin-top: 13px;
 		padding: 0 6px;
@@ -69,6 +51,7 @@
 .field {
 	width: 100%;
 	padding: 6px;
+	position: relative;
 }
 .field--half {
 	@media (min-width: 750px){
@@ -79,18 +62,6 @@
 	@media (min-width: 750px){
 		width: 33.33%;
 	}
-}
-// field--active
-.field--active {
-	.field__label {
-		color: #545454;
-	}
-}
-.field__input:focus, 
-.field__input-wrapper--flag-focus .field__input {
-	outline: none;
-	border-color: #68cad9;
-	box-shadow: 0 0 0 1px #68cad9;
 }
 .visually-hidden {
 	border: 0;
@@ -120,7 +91,7 @@
 	font-size: 12px;
 	font-weight: normal;
 	position: absolute;
-	top: 0;
+	top: 6px;
 	width: 100%;
 	margin: 5px 0 6px;
 	padding: 0 11px;
@@ -150,6 +121,21 @@
 		border-color: $errorColor;
 		box-shadow: 0 0 0 1px $errorColor;
 	}
+	&:focus {
+
+	}
+}
+// field--active
+.field--active {
+	.field__label {
+		color: #545454;
+	}
+}
+.field__input:focus, 
+.field__input-wrapper--flag-focus .field__input {
+	outline: none;
+	border-color: #68cad9;
+	box-shadow: 0 0 0 1px #68cad9;
 }
 label {
 	&.error {
@@ -188,6 +174,19 @@ label {
 	padding-right: 10px;
 }
 .input-checkbox {
+	border-radius: 4px;
+	margin: 0;
+	&:after {
+		width: 10px;
+		height: 8px;
+		margin-left: -5px;
+		margin-top: -4px;
+		background-image: url('../images/checkbox-tick.png');
+		background-image: url('../images/checkbox-tick.svg'),none;
+	}
+}
+.input-checkbox, 
+.input-radio {
 	width: 18px;
 	height: 18px;
 	box-shadow: 0 0 0 0 #68cad9 inset;
@@ -196,20 +195,6 @@ label {
 	cursor: pointer;
 	vertical-align: -4px;
 	border: 1px solid #d9d9d9;
-	border-radius: 4px;
-	margin: 0;
-	&:after {
-		width: 10px;
-		height: 8px;
-		margin-left: -5px;
-		margin-top: -4px;
-
-		background-image: url('../images/checkbox-tick.png');
-		background-image: url('../images/checkbox-tick.svg'),none;
-	}
-}
-.input-checkbox, 
-.input-radio {
 	&:after {
 		content: "";
 		display: block;
@@ -229,15 +214,20 @@ label {
 		}
 	}
 }
+.input-radio {
+	border-radius: 50%;
+	&:after {
+		width: 4px;
+		height: 4px;
+		margin-left: -2px;
+		margin-top: -2px;
+		background-color: #fff;
+		border-radius: 50%;
+	}
+}
 .shipping-address {
 	padding: 42px 0 0;
 }
-
-
-
-
-
-
 .animate-floating-labels {
 	.field__label {
 		transition: all 0.2s ease-out;
@@ -246,36 +236,20 @@ label {
 		transition: all 0.2s ease-out;
 	}
 }
-
-
-.floating-labels {
-	.field--show-floating-label {
-		.field__label {
-			transform: none;
-			opacity: 1;
-		}
-		.field__input {
-			padding: 21px 11px 5px;
-		}
+.field--show-floating-label {
+	.field__label {
+		transform: none;
+		opacity: 1;
 	}
-	.field__input-wrapper--icon-right {
-		.field__label {
-			padding-right: 45px;
-		}
+	.field__input {
+		padding: 21px 11px 5px;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
+.field__input-wrapper--icon-right {
+	.field__label {
+		padding-right: 45px;
+	}
+}
 .payment-card-holder {
 	width:100%;
 	display:block;
@@ -293,4 +267,11 @@ label {
 	max-width:250px;
 	float: right;
 	margin-top: 5px;
+}
+.sidebar {
+	form {
+		.field__label {
+			top: 0;
+		}
+	}
 }
