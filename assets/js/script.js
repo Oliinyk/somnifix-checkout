@@ -191,6 +191,13 @@ $(document).ready(function(){
 
 		$('body').find('.step__footer .step-shipping').addClass('is-hide');
 		$('body').find('.step__footer .step-payment').removeClass('is-hide');
+
+
+
+		$('body').find('.paymentMethodJs').html($('.shippingLabelJs').text());
+		$('body').find('.paymentPriceJs').html($('.shippingPriceJs').text());
+		$('body').find('.rowMethodJs').removeClass('is-hide');
+		$('body').find('.shippingMethodJs').addClass('is-hide');
 	});
 
 	
@@ -201,6 +208,12 @@ $(document).ready(function(){
 
 		$('body').find('.step__footer .step-shipping').removeClass('is-hide');
 		$('body').find('.step__footer .step-payment').addClass('is-hide');
+
+
+		$('body').find('.paymentMethodJs').html('');
+		$('body').find('.paymentPriceJs').html('');
+		$('body').find('.rowMethodJs').addClass('is-hide');
+		$('body').find('.shippingMethodJs').removeClass('is-hide');
 	});
 	
 });

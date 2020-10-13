@@ -121,8 +121,10 @@
 		border-color: $errorColor;
 		box-shadow: 0 0 0 1px $errorColor;
 	}
-	&:focus {
-
+	&--iframe-container {
+		overflow: hidden;
+		padding: 0;
+		position: relative;
 	}
 }
 // field--active
@@ -166,7 +168,7 @@ label {
 	display: block;
 	position: absolute;
 	top: 0;
-	height: 43px;
+	height: 100%;
 	width: 45px;
 }
 
