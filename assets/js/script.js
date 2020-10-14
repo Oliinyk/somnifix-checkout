@@ -88,13 +88,13 @@ $(document).ready(function(){
 			submitHandler: function (form) {
 				// form.submit();
 
+				// Go to step 2(Shipping)
 				$('body').addClass('secondStep');
 				$('body').find('.customer_bar').addClass('finished');
 				$('body').find('.shipping_bar').addClass('active');
 				
-				$('body').find('.step__footer .step-customer').addClass('is-hide');
-				$('body').find('.step__footer .step-shipping').removeClass('is-hide');
-
+				$('body').find('.step__footer.step-customer').addClass('is-hide');
+				$('body').find('.step__footer.step-shipping').removeClass('is-hide');
 
 				var stepMail = $('body').find('.edit_checkout input[type=email]').val();
 				$('body').find('.shippingMailJs').text(stepMail);
@@ -119,10 +119,67 @@ $(document).ready(function(){
 	});
 
 
+	$(".validatePayJs").each(function() {
+		$(this).validate({
+			rules: {
+				required: 'required',
+				firstName:{
+					required: true
+				},
+				lastName: {
+					required: true
+				},
+				address: {
+					required: true
+				},
+				city: {
+					required: true
+				},
+				zip: {
+					required: true,
+					digits: true
+				},
+				phone: {
+					required: true,
+					phoneno: true 
+				},
+				optional: {
+					required: false
+				}
+			},
+			messages: {
+				required: 'This field is required',
+				firstName: 'Enter a first name',
+				lastName: 'Enter a last name',
+				address: 'Enter an address',
+				city: 'Please enter a valid city',
+				zip: 'Enter a ZIP / postal code',
+				phone: 'Enter a valid phone number'
+			},
+			errorPlacement: function(error, element) {
+				$('body').find('.noticeErrorJs').removeClass('is-hide');
+				$('html, body').stop().animate({
+					scrollTop: $('body').find('.step__payment-method').offset().top
+				}, 300);
+			},
+			submitHandler: function(form) {  
+				// Finished steps
+				alert('You are a WINNER!!!')
+			}
+		})
+	});
+
+
 
 	// discount code
+	var discountArr = ['CRAFTON','CRAFTON-1','CRAFTON-1']
+
+	
 	$.validator.addMethod("discount", function(value, element) {
-	    return this.optional(element) || /^\bCRAFTON\b$/.test(value);
+		return this.optional(element) || /^\bCRAFTON\b$/.test(value);
+
+		// return this.optional(element) || /^\b$.each(discountArr,function(index,value){value})\b$/.test(value);
+		console.log('123123123')
 	});
 
 	$(".validateReduction").each(function() {
@@ -140,6 +197,9 @@ $(document).ready(function(){
 				$('body').find('.tags-list').removeClass('is-hide');
 				$('body').find('.discountTagJs').text($('.field__input[name="reduction_code"]').val());
 				$('body').find('.discountRowJs').removeClass('is-hide');
+
+
+				$('body').find('.reduction-code__text').text($('.field__input[name="reduction_code"]').val());
 			}
 		})
 	});
@@ -170,29 +230,42 @@ $(document).ready(function(){
 		}
 	}); 
 
-	// Return to step 1(Information)
-	$(document).on('click', '.RtoIJs, .changeCustomerJs', function() {
+	// Return to step 1(Customer)
+	$(document).on('click', '.RtoIJs, .secondStep .changeCustomerJs', function() {
 		$('body').removeClass('secondStep');
-		$('body').find('.step__footer .step-customer').removeClass('is-hide');
-		$('body').find('.step__footer .step-shipping').addClass('is-hide');
+		$('body').find('.step__footer.step-customer').removeClass('is-hide');
+		$('body').find('.step__footer.step-shipping').addClass('is-hide');
 		$('body').find('.edit_checkout input[type=email]').focus();
-
 
 		$('body').find('.customer_bar').removeClass('finished');
 		$('body').find('.shipping_bar').removeClass('active');
 	});
 
 
+	// Return to step 1(Customer) from step3(Payment)
+	$(document).on('click', '.thirdStep .changeCustomerJs', function() {
+		$('body').removeClass('thirdStep');
+		$('body').find('.step__footer.step-customer').removeClass('is-hide');
 
-	// Go to step 3
+		$('body').find('.step__footer.step-shipping').addClass('is-hide');
+		$('body').find('.edit_checkout input[type=email]').focus();
+
+		$('body').find('.customer_bar').removeClass('finished');
+		$('body').find('.shipping_bar').removeClass('finished active');		
+		$('body').find('.payment_bar').removeClass('active');
+
+	});
+
+	// Go to step 3(Payment)
 	$(document).on('click', '.toPaymentBtnJs', function() {
+		$('body').removeClass('secondStep');
+		$('body').addClass('thirdStep');
+
 		$('body').find('.shipping_bar').addClass('finished');
 		$('body').find('.payment_bar').addClass('active');
 
-		$('body').find('.step__footer .step-shipping').addClass('is-hide');
-		$('body').find('.step__footer .step-payment').removeClass('is-hide');
-
-
+		$('body').find('.step__footer.step-shipping').addClass('is-hide');
+		$('body').find('.step__footer.step-payment').removeClass('is-hide');
 
 		$('body').find('.paymentMethodJs').html($('.shippingLabelJs').text());
 		$('body').find('.paymentPriceJs').html($('.shippingPriceJs').text());
@@ -203,17 +276,33 @@ $(document).ready(function(){
 	
 	// Return to step 2(Shipping)
 	$(document).on('click', '.RtoSJs', function() {
+		$('body').addClass('secondStep');
+		$('body').removeClass('thirdStep');
+
 		$('body').find('.shipping_bar').removeClass('finished');
 		$('body').find('.payment_bar').removeClass('active');
 
-		$('body').find('.step__footer .step-shipping').removeClass('is-hide');
-		$('body').find('.step__footer .step-payment').addClass('is-hide');
-
+		$('body').find('.step__footer.step-shipping').removeClass('is-hide');
+		$('body').find('.step__footer.step-payment').addClass('is-hide');
 
 		$('body').find('.paymentMethodJs').html('');
 		$('body').find('.paymentPriceJs').html('');
 		$('body').find('.rowMethodJs').addClass('is-hide');
 		$('body').find('.shippingMethodJs').removeClass('is-hide');
 	});
-	
+
+
+	// radio payment step
+	$(document).on('change', '.step__section .content-box .input-radio', function() {
+
+		$(this).closest('.content-box').removeClass('is-active');
+		$(this).closest('.content-box').find('.content-box__row--secondary').addClass('is-hide');
+		// $('body').find('.step__section .content-box .radio-wrapper').removeClass('is-active');
+		// $('body').find('.step__section .content-box .radio-wrapper.content-box__row--secondary').addClass('is-hide');
+
+		$(this).closest('.radio-wrapper').addClass('is-active');
+		$(this).closest('.radio-wrapper').next().removeClass('is-hide');
+	});
+
+
 });

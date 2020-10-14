@@ -60,6 +60,9 @@
     .secondStep & {
         display: none;
     }
+    .thirdStep & {
+        display: none;
+    }
 }
 
 .main__content {
@@ -97,12 +100,18 @@
     .secondStep & {
         display: none;
     }
+    .thirdStep & {
+    	display: none;
+    }
 }
 
 .step__shipping {
     display: none;
     .secondStep & {
         display: block;
+    }
+    .thirdStep & {
+    	display: block;
     }
     .content-box {
         background: #fff;
@@ -172,12 +181,19 @@
 	}
 }
 
-// 
-.step__payment-method {
+// step__payment-method & step__billing-address
+.step__payment-method,
+.step__billing-address {
 	padding-top: 28px;
 	@media (min-width: 750px) {
 		padding-top: 42px;
 	}
+
+	display: none;
+	.thirdStep & {
+		display: block;
+	}
+
 	.content-box {
 		background: #fff;
 		background-clip: padding-box;
@@ -205,6 +221,13 @@
 			align-items: center;
 			justify-content: space-between;
 			width: 100%;
+			label {
+				width: 100%;
+			}
+			.offsite-payment-gateway-logo {
+				height: 24px;
+				display: block;
+			}
 		}
 	}
 	.radio__label__accessory {
@@ -219,6 +242,16 @@
 			display: flex;
 			flex-wrap: wrap;
 			width: 100%;
+		}
+	}
+	.blank-slate {
+		text-align: center;
+		width: 100%;
+		@media (min-width: 750px) {
+			padding: 16px 63px;
+		}
+		&__icon {
+			margin-bottom: 16px;
 		}
 	}
 }
@@ -261,6 +294,16 @@
 		background-image: url('../images/offsite.svg'),none;
 	}
 }
+.icon--free-tag {
+	width: 94px;
+	height: 46px;
+	background-image: url('../images/free-tag-small.svg'), none;
+	@media (min-width: 750px){
+		width: 152px;
+		height: 80px;
+		background-image: url('../images/free-tag.svg'), none;	
+	}
+}
 .card-fields-iframe {
 	appearance: none;
 	background: transparent;
@@ -280,5 +323,14 @@
 	}
 	.field__icon {
 		right: 0;
+	}
+}
+
+// step__billing-address
+.step__billing-address {
+	.address-fields {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
 	}
 }

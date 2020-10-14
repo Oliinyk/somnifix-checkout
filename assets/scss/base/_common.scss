@@ -255,9 +255,9 @@ input:-webkit-autofill:active {
 	@media (min-width: 750px){
 		margin-top: 21px;
 	}
-	.step-customer,
-	.step-shipping,
-	.step-payment {
+	&.step-customer,
+	&.step-shipping,
+	&.step-payment {
 		width: 100%;
 		display: flex;
 		align-items: center;
