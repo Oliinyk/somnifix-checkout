@@ -4,8 +4,6 @@
   "description": "Ready workspace for frontend for many tasks. JS: clean unnecessary js for bootstrap.js, concatenation all js files into one minified files; css: clean unnecessary css, compilation scss to css, concatenation all css files into one minified files, extracts & inlines critical (above-the-fold) CSS to html; images: image optimization",
   "license": "ISC",
   "dependencies": {
-    "@fancyapps/fancybox": "^3.5.7",
-    "bootstrap": "4.1.1",
     "browser-sync": "2.18.13",
     "critical": "0.9.1",
     "del": "3.0.0",
@@ -30,5 +28,8 @@
     "popper.js": "1.14.3",
     "run-sequence": "2.2.0",
     "swiper": "4.3.3"
+  },
+  "devDependencies": {
+    "intl-tel-input": "^17.0.6"
   }
 }

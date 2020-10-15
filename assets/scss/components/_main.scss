@@ -1,15 +1,37 @@
+.responsive_header {
+	padding: 21px 0;
+	@media (min-width: 1000px){
+		display: none;
+	}
+	.logo__image {
+		max-height: 40px;
+	}
+}
 .main {
-    display: flex;
+	display: flex;
     flex-direction: column;
     flex: 1 0 auto;
+    padding: 21px 0 0 0;
+    width: 100%;
     @media (min-width: 1000px){
         padding: 56px 0 0 0;
         width: 52%;
         padding-right: 6%;
     }
+    @media (min-width: 750px) {
+		
+    }
+    @media (max-width: 999px){
+		order: 2;
+	}
     .main__header {
         @media (min-width: 1000px) {
             padding: 0 0 28px 0;
+        }
+        .logo {
+        	@media (max-width: 999px){
+				display: none;
+			}
         }
     }
     .logo {
@@ -54,6 +76,12 @@
         flex-grow: 1;
         width: calc(50% - 24px);
     }
+    @media (max-width: 999px) and (min-width: 750px) {
+    	margin-bottom: 24px;
+    }
+    @media (max-width: 749px){
+		padding-bottom: 24px;
+	}
     .separator__content {
         padding: 0 12px;
     }
@@ -67,6 +95,7 @@
 
 .main__content {
     flex: 1 0 auto;
+    padding-bottom: 21px;
     @media (min-width: 750px){
         padding-bottom: 56px;
     }
@@ -102,6 +131,18 @@
     }
     .thirdStep & {
     	display: none;
+    }
+    .contact-information {
+    	.section__header {
+    		@media (max-width: 749px){
+    			flex-wrap: wrap;
+    		}
+    		.layout-flex__item {
+    			@media (max-width: 749px){
+    				width: 100%;
+    			}
+    		}
+    	}
     }
 }
 
@@ -183,7 +224,8 @@
 
 // step__payment-method & step__billing-address
 .step__payment-method,
-.step__billing-address {
+.step__billing-address,
+.step__remember {
 	padding-top: 28px;
 	@media (min-width: 750px) {
 		padding-top: 42px;
@@ -325,6 +367,17 @@
 		right: 0;
 	}
 }
+.payment-method-wrapper {
+	@media (max-width: 749px){
+		flex-wrap: wrap;
+	}
+	.radio__label__accessory {
+		@media (max-width: 749px){
+			padding: 5px 0 0 0;
+			width: 100%;
+		}
+	}
+}
 
 // step__billing-address
 .step__billing-address {
@@ -332,5 +385,43 @@
 		display: flex;
 		flex-wrap: wrap;
 		width: 100%;
+	}
+}
+
+// step__remember
+.step__remember {
+	.content-box__row {
+		flex-wrap: wrap;
+	}
+	.fieldset {
+		width: 100%;
+		position: relative;
+		z-index: 3;
+	}
+	.fieldset-description {
+		margin-top: 13px;
+	}
+	.section__content__policy {
+		margin-top: 12px;
+	}
+	.field__input-wrapper {
+		.field__icon {
+			left: 0;
+		}
+		.field__icon-svg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		.field__label {
+			padding-left: 45px;
+		}
+		.iti--allow-dropdown {
+			input {
+				padding-left: 45px;
+			}
+		}
+
 	}
 }

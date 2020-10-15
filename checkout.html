@@ -18,7 +18,7 @@
 <!-- endbuild -->
 </head>
 <!-- <body class="logged"> -->
-<body class="">
+<body>
 	<div class="wrap">
 		<div class="progress-bar">
 			<ul>
@@ -37,10 +37,16 @@
 			</ul>
 		</div>
 
+		<div class="main__header responsive_header">
+			<a class="logo" href="https://somnifix.com/">
+				<img alt="SomniFix" class="logo__image" src="assets/images/logo.png">
+			</a>
+		</div>
+
 		<!-- <div class="content"> -->
 			<div class="main-wrap">
 				<div class="main">
-					<header class="main__header">
+					<div class="main__header">
 						<a class="logo" href="https://somnifix.com/">
 							<img alt="SomniFix" class="logo__image" src="assets/images/logo.png">
 						</a>
@@ -67,7 +73,7 @@
 						<div class="alternative-payment-separator">
 							<span class="separator__content">OR</span>
 						</div>
-					</header>
+					</div>
 
 					<div class="main__content">
 
@@ -163,10 +169,6 @@
 													<div class="field__input-wrapper">
 														<label class="field__label" for="checkout_address1">Address</label>
 														<input placeholder="Address" class="field__input" type="text" name="address" id="checkout_address1" />
-														<!-- <p class="field__additional-info visually-hidden">
-															<svg class="icon-svg icon-svg--size-16 field__message__icon" aria-hidden="true" focusable="false"> <use xlink:href="#info" /> </svg>
-															Add a house number if you have one
-														</p> -->
 												    </div>
 												</div>
 												<div class="field field--optional">
@@ -258,17 +260,6 @@
 														</div>
 												    </div>
 												</div>
-
-												<!-- <div class="field--third field field--required">
-													<label class="field__label" for="checkout_province">Region</label>
-													<div class="field__input-wrapper field__input-wrapper--select">
-														<input placeholder="Region" class="field__input" type="text" name="checkout[shipping_address][province]" id="checkout_province" />
-														<div class="field__caret shown-if-js">
-															<svg class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-10 field__caret-svg" role="presentation" aria-hidden="true" focusable="false"> <use xlink:href="#caret-down" /> </svg>
-														</div>
-													</div>
-												</div> -->
-
 												<div class="field--half field field--required">
 													<div class="field__input-wrapper">
 														<label class="field__label" for="checkout_zip">Postal code</label>
@@ -423,199 +414,171 @@
 
 
 						<!-- step 3 - main section-->
-<!-- Payment -->
-						<div class="step__section step__payment-method">
-							<div class="section__header">
-								<h2 class="section__title" id="main-header" tabindex="-1">
-									Payment
-								</h2>
-								<p class="section__text">
-									All transactions are secure and encrypted.
-								</p>
-							</div>
-  							<div class="section__content">
-  								<div class="notice notice--error noticeErrorJs is-hide">
-  									<svg class="icon-svg icon-svg--size-24 notice__icon" aria-hidden="true" focusable="false"> <use xlink:href="#error"></use> </svg>
-  									<div class="notice__content">
-  										<p class="notice__text">There was a problem processing the payment. Try refreshing this page or check your internet connection.</p>
-  									</div>
-  								</div>
-								<fieldset class="content-box">
-									<div class="radio-wrapper content-box__row">
-										<div class="radio__input">
-											<input class="input-radio" id="checkout_payment_gateway_7210598443" type="radio" value="7210598443" checked="checked" name="checkout[payment_gateway]">
-										</div>
-
-										<div class="radio__label payment-method-wrapper ">
-											<label for="checkout_payment_gateway_7210598443" class="radio__label__primary content-box__emphasis">
-												Credit card
-											</label>
-											<span class="radio__label__accessory">
-												<span class="payment-icon payment-icon--visa">
-													<span class="visually-hidden">
-														Visa, 
-													</span>
-												</span>
-												<span class="payment-icon payment-icon--master">
-													<span class="visually-hidden">
-														Mastercard, 
-													</span>
-												</span>
-												<span class="payment-icon payment-icon--american-express">
-													<span class="visually-hidden">
-														American Express, 
-													</span>
-												</span>
-												<span class="payment-icon payment-icon--discover">
-													<span class="visually-hidden">
-														Discover, 
-													</span>
-												</span>
-												<span class="payment-icon-list__more">
-													<span class="content-box__small-text">
-														and more…
-													</span>
-												</span>
-											</span>
-										</div>
-									</div>
-
-									<div id="" class="radio-wrapper content-box__row content-box__row--secondary card-fields-container">
-
-										<!-- <div class="blank-slate hidden" data-blank-slate="" aria-hidden="true">
-											<i class="blank-slate__icon icon icon--offsite"></i>
-											<p>You will be redirected to add your payment information.</p>
-										</div>
-										<div class="blank-slate hidden" id="card-fields__loading-error">
-											<svg class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-64 blank-slate__icon" aria-hidden="true" focusable="false"> <use xlink:href="#error-major"></use> </svg>
-											<p>Credit and debit card payments aren’t available right now.<br><a href="https://somnifix.com/25728006/checkouts/710403cccde12c2534fe1ee97e06548f?previous_step=shipping_method&amp;step=payment_method">Refresh this page</a> or try a different payment method.</p>
-										</div> -->
-
-										<div class="fieldset">
-											<div class="field field--required">
-										        <div class="field__input-wrapper field__input-wrapper--icon-right">
-										        	<label class="field__label field__label--visible" for="checkout_credit_card_number">Card number</label>
-													<div class="field__input field__input--iframe-container">
-														<iframe class="card-fields-iframe" frameborder="0" id="card-fields-number-5q3qpr4ni4000000" name="card-fields-number-5q3qpr4ni4000000" scrolling="no" src="https://checkout.shopifycs.com/number?identifier=710403cccde12c2534fe1ee97e06548f&amp;location=https%3A%2F%2Fsomnifix.com%2F25728006%2Fcheckouts%2F710403cccde12c2534fe1ee97e06548f%3Fprevious_step%3Dshipping_method%26step%3Dpayment_method&amp;dir=ltr" title="Field container for: Card number" style="height: 45px;"></iframe>
-													</div>
-										          <div class="field__icon">
-										            <div id="credit_card_number_tooltip" class="tooltip-container">
-										            	<button type="button" class="tooltip-control">
-										            		<svg class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-16 icon-svg--block icon-svg--center" role="presentation" aria-hidden="true" focusable="false"> <use xlink:href="#lock"></use> </svg>
-										            	</button>
-										            	<span class="tooltip" role="tooltip" id="tooltip-for-credit_card_number">All transactions are secure and encrypted.</span>
-										            </div>
-										          </div>
-										        </div>
-											</div>
-											<div class="field field--required">
-										        <div class="field__input-wrapper">
-										        	<label class="field__label field__label--visible" for="checkout_credit_card_name">Name on card</label>
-										          <div class="field__input field__input--iframe-container">
-										          	<iframe class="card-fields-iframe" frameborder="0" id="card-fields-name-py2alkbp1o000000" name="card-fields-name-py2alkbp1o000000" scrolling="no" src="https://checkout.shopifycs.com/name?identifier=710403cccde12c2534fe1ee97e06548f&amp;location=https%3A%2F%2Fsomnifix.com%2F25728006%2Fcheckouts%2F710403cccde12c2534fe1ee97e06548f%3Fprevious_step%3Dshipping_method%26step%3Dpayment_method&amp;dir=ltr" title="Field container for: Name on card" style="height: 45px;"></iframe>
-										          </div>
-										        </div>
+						<form class="different_billing_address animate-floating-labels validatePayJs">
+						<!-- Payment -->
+							<div class="step__section step__payment-method">
+								<div class="section__header">
+									<h2 class="section__title" id="main-header" tabindex="-1">
+										Payment
+									</h2>
+									<p class="section__text">
+										All transactions are secure and encrypted.
+									</p>
+								</div>
+	  							<div class="section__content">
+	  								<div class="notice notice--error noticeErrorJs is-hide">
+	  									<svg class="icon-svg icon-svg--size-24 notice__icon" aria-hidden="true" focusable="false"> <use xlink:href="#error"></use> </svg>
+	  									<div class="notice__content">
+	  										<p class="notice__text">There was a problem processing the payment. Try refreshing this page or check your internet connection.</p>
+	  									</div>
+	  								</div>
+									<fieldset class="content-box">
+										<div class="radio-wrapper content-box__row">
+											<div class="radio__input">
+												<input class="input-radio" id="checkout_payment_gateway_7210598443" type="radio" value="7210598443" checked="checked" name="checkout[payment_gateway]">
 											</div>
 
-										    <div class="field--half field field--required">
-										        <div class="field__input-wrapper"><label class="field__label field__label--visible" for="checkout_credit_card_expiry">Expiration date (MM / YY)</label>
-										          <div class="field__input field__input--iframe-container">
-										          	<iframe class="card-fields-iframe" frameborder="0" id="card-fields-expiry-fj4o3ecxx9600000" name="card-fields-expiry-fj4o3ecxx9600000" scrolling="no" src="https://checkout.shopifycs.com/expiry?identifier=710403cccde12c2534fe1ee97e06548f&amp;location=https%3A%2F%2Fsomnifix.com%2F25728006%2Fcheckouts%2F710403cccde12c2534fe1ee97e06548f%3Fprevious_step%3Dshipping_method%26step%3Dpayment_method&amp;dir=ltr" title="Field container for: Expiration date (MM / YY)" style="height: 45px;"></iframe>
-										          </div>
-										        </div>
-											</div>
-										    <div class="field--half field field--required">
-										        <div class="field__input-wrapper field__input-wrapper--icon-right">
-										        	<label class="field__label field__label--visible" for="checkout_credit_card_verification_value">Security code</label>
-										          <div class="field__input field__input--iframe-container">
-										          	<iframe class="card-fields-iframe" frameborder="0" id="card-fields-verification_value-zpg2enigle000000" name="card-fields-verification_value-zpg2enigle000000" scrolling="no" src="https://checkout.shopifycs.com/verification_value?identifier=710403cccde12c2534fe1ee97e06548f&amp;location=https%3A%2F%2Fsomnifix.com%2F25728006%2Fcheckouts%2F710403cccde12c2534fe1ee97e06548f%3Fprevious_step%3Dshipping_method%26step%3Dpayment_method&amp;dir=ltr" title="Field container for: Security code" style="height: 45px;"></iframe></div>
-										          <div class="field__icon">
-										            <div id="verification_value_tooltip" class="tooltip-container">
-										            	<button type="button" class="tooltip-control">
-										            		<svg class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-16 icon-svg--block icon-svg--center" role="presentation" aria-hidden="true" focusable="false"> <use xlink:href="#question"></use> </svg>
-										            	</button>
-										              <span id="tooltip-for-verification_value" class="tooltip" role="tooltip">
-										                <span data-cvv-tooltip="unknown">
-														3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front.
-										                </span>
-										                <!-- <span data-cvv-tooltip="amex" class="hidden">
-															4-digit security code on the front of your card
-										                </span>
-										                <span data-cvv-tooltip="other" class="hidden">
-															3-digit security code on the back of your card
-										                </span> -->
-										              </span>
-													</div>          
-												  </div>
-										        </div>
-											</div>
-										</div>
-									</div>
-<!-- PayPal -->
-									<div class="radio-wrapper content-box__row">
-										<div class="radio__input">
-											<input class="input-radio" id="checkout_payment_gateway_7210565675" type="radio" value="7210565675" name="checkout[payment_gateway]">
-										</div>
-										<div class="radio__label  ">
-											<label for="checkout_payment_gateway_7210565675" class="radio__label__primary content-box__emphasis">
-												<img alt="PayPal" class="offsite-payment-gateway-logo" src="assets/images/paypal@2x.png">
-												<span class="visually-hidden">
-													PayPal
+											<div class="radio__label payment-method-wrapper ">
+												<label for="checkout_payment_gateway_7210598443" class="radio__label__primary content-box__emphasis">
+													Credit card
+												</label>
+												<span class="radio__label__accessory">
+													<span class="payment-icon payment-icon--visa">
+														<span class="visually-hidden">
+															Visa, 
+														</span>
+													</span>
+													<span class="payment-icon payment-icon--master">
+														<span class="visually-hidden">
+															Mastercard, 
+														</span>
+													</span>
+													<span class="payment-icon payment-icon--american-express">
+														<span class="visually-hidden">
+															American Express, 
+														</span>
+													</span>
+													<span class="payment-icon payment-icon--discover">
+														<span class="visually-hidden">
+															Discover, 
+														</span>
+													</span>
+													<span class="payment-icon-list__more">
+														<span class="content-box__small-text">
+															and more…
+														</span>
+													</span>
 												</span>
-											</label>
-										</div>
-									</div>
-<!-- is-hide shown-if-js-->
-									<div class="radio-wrapper content-box__row content-box__row--secondary is-hide" id="payment-gateway-subfields-7210565675">
-										<div class="blank-slate">
-											<i class="blank-slate__icon icon icon--offsite"></i>
-											<p class="shown-if-js">After clicking “Complete order”, you will be redirected to PayPal to complete your purchase securely.</p>
-											<!-- <p class="hidden-if-js">After clicking “Continue to payment”, you will be redirected to PayPal to complete your purchase securely.</p> -->
-										</div>
-									</div>
-<!-- Amazon -->
-									<div class="radio-wrapper content-box__row">
-										<div class="radio__input">
-											<input class="input-radio" id="checkout_payment_gateway_18428624939" type="radio" value="18428624939" name="checkout[payment_gateway]">
+											</div>
 										</div>
 
-									    <div class="radio__label">
-									      <label for="checkout_payment_gateway_18428624939" class="radio__label__primary content-box__emphasis">
-									          <img alt="Amazon Pay" class="offsite-payment-gateway-logo" src="//cdn.shopify.com/s/assets/checkout/offsite-gateway-logos/amazonpay@2x-6ed2b0ce5c20dfd0dc87f9363f0a57ecf9bb4e4fde26df79b3da96e6480cebd4.png">
-									            <span class="visually-hidden">
-									              Amazon Pay
-									            </span>
-											</label>
+										<div class="radio-wrapper content-box__row content-box__row--secondary card-fields-container">
+											<div class="fieldset">
+												<div class="field field--required">
+											        <div class="field__input-wrapper field__input-wrapper--icon-right">
+											        	<label class="field__label field__label--visible" for="credit_card_number">Card number</label>
+											        	<input placeholder="Card number" class="field__input" size="30" type="text" name="card_number" id="credit_card_number">
+											        	<div class="field__icon">
+											        		<div id="credit_card_number_tooltip" class="tooltip-container">
+												            	<button type="button" class="tooltip-control">
+												            		<svg class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-16 icon-svg--block icon-svg--center" role="presentation" aria-hidden="true" focusable="false"> <use xlink:href="#lock"></use> </svg>
+												            	</button>
+												            	<span class="tooltip" role="tooltip" id="tooltip-for-credit_card_number">All transactions are secure and encrypted.</span>
+											            	</div>
+											        	</div>
+											        </div>
+												</div>
+												<div class="field field--required">
+											        <div class="field__input-wrapper">
+											        	<label class="field__label field__label--visible" for="checkout_credit_card_name">Name on card</label>
+											          	<input placeholder="Name on card" class="field__input" size="30" type="text" name="card_name" id="checkout_credit_card_name">
+											        </div>
+												</div>
+											    <div class="field--half field field--required">
+											        <div class="field__input-wrapper">
+											        	<label class="field__label field__label--visible" for="credit_card_expiry">Expiration date (MM / YY)</label>
+											       		<input placeholder="Expiration date (MM / YY)" class="field__input" size="30" type="text" value="" name="card_expiry" id="credit_card_expiry">
+											        </div>
+												</div>
+											    <div class="field--half field field--required">
+											        <div class="field__input-wrapper field__input-wrapper--icon-right">
+											        	<label class="field__label field__label--visible" for="credit_card_verification_value">Security code</label>
+											        	<input placeholder="Security code" class="field__input" size="30" type="text" name="security_code" id="credit_card_verification_value">
+											        	<div class="field__icon">
+											        		<div id="verification_value_tooltip" class="tooltip-container">
+												            	<button type="button" class="tooltip-control">
+												            		<svg class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-16 icon-svg--block icon-svg--center" role="presentation" aria-hidden="true" focusable="false"> <use xlink:href="#question"></use> </svg>
+												            	</button>
+												              <span id="tooltip-for-verification_value" class="tooltip" role="tooltip">
+												                <span data-cvv-tooltip="unknown">
+																3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front.
+												                </span>
+												              </span>
+															</div>          
+														</div>
+											        </div>
+												</div>
+											</div>
 										</div>
-										<!-- <div id="payment_gateway_18428624939_description" class="visually-hidden" aria-live="polite" data-detected="Detected card brand: {brand}"> -->
-									</div>  
-<!-- is-hide shown-if-js-->
-									<div class="radio-wrapper content-box__row content-box__row--secondary is-hide" id="payment-gateway-subfields-18428624939">
-										<div class="blank-slate">
-											<i class="blank-slate__icon icon icon--offsite"></i>
-											<p>You will be asked to login with Amazon.</p>
+	<!-- PayPal -->
+										<div class="radio-wrapper content-box__row">
+											<div class="radio__input">
+												<input class="input-radio" id="checkout_payment_gateway_7210565675" type="radio" value="7210565675" name="checkout[payment_gateway]">
+											</div>
+											<div class="radio__label  ">
+												<label for="checkout_payment_gateway_7210565675" class="radio__label__primary content-box__emphasis">
+													<img alt="PayPal" class="offsite-payment-gateway-logo" src="assets/images/paypal@2x.png">
+													<span class="visually-hidden">
+														PayPal
+													</span>
+												</label>
+											</div>
 										</div>
-									</div>
+	<!-- is-hide shown-if-js-->
+										<div class="radio-wrapper content-box__row content-box__row--secondary is-hide" id="payment-gateway-subfields-7210565675">
+											<div class="blank-slate">
+												<i class="blank-slate__icon icon icon--offsite"></i>
+												<p class="shown-if-js">After clicking “Complete order”, you will be redirected to PayPal to complete your purchase securely.</p>
+											</div>
+										</div>
+	<!-- Amazon -->
+										<div class="radio-wrapper content-box__row">
+											<div class="radio__input">
+												<input class="input-radio" id="checkout_payment_gateway_18428624939" type="radio" value="18428624939" name="checkout[payment_gateway]">
+											</div>
 
-								</fieldset>
-    						</div> 
+										    <div class="radio__label">
+										      <label for="checkout_payment_gateway_18428624939" class="radio__label__primary content-box__emphasis">
+										          <img alt="Amazon Pay" class="offsite-payment-gateway-logo" src="//cdn.shopify.com/s/assets/checkout/offsite-gateway-logos/amazonpay@2x-6ed2b0ce5c20dfd0dc87f9363f0a57ecf9bb4e4fde26df79b3da96e6480cebd4.png">
+										            <span class="visually-hidden">
+										              Amazon Pay
+										            </span>
+												</label>
+											</div>
+										</div>  
+	<!-- is-hide shown-if-js-->
+										<div class="radio-wrapper content-box__row content-box__row--secondary is-hide" id="payment-gateway-subfields-18428624939">
+											<div class="blank-slate">
+												<i class="blank-slate__icon icon icon--offsite"></i>
+												<p>You will be asked to login with Amazon.</p>
+											</div>
+										</div>
 
-							<div class="is-hide">
-								<div class="content-box blank-slate">
-									<div class="content-box__row">
-										<div class="blank-slate">
-											<i class="blank-slate__icon icon icon--free-tag"></i>
-											<p>Your order is covered by your gift cards.</p>
+									</fieldset>
+	    						</div> 
+
+								<div class="is-hide">
+									<div class="content-box blank-slate">
+										<div class="content-box__row">
+											<div class="blank-slate">
+												<i class="blank-slate__icon icon icon--free-tag"></i>
+												<p>Your order is covered by your gift cards.</p>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 
-
-
-
-						<form class="different_billing_address animate-floating-labels validatePayJs">
 
 						<!-- Billing address -->
 							<div class="step__section step__billing-address">
@@ -989,54 +952,44 @@
 								</div>
 							</div>
 
-
-
 							<!-- Remember me -->
-							<div class="step__section step__remember-me">
+							<div class="step__section step__remember">
 								<div class="section__header">
 									<h2 class="section__title">Remember me</h2>
 								</div>
-
 								<div class="section__content">
-      <div class="content-box">
-        <div class="content-box__row">
-          <div class="checkbox-wrapper">
-            <div class="checkbox__input">
-              <input size="30" type="hidden" value="true" name="checkout[remember_me]">
-              <input name="checkout[remember_me]" type="hidden" value="0"><input class="input-checkbox" data-backup="remember_me" data-remember-me-opt-in="true" aria-expanded="true" aria-controls="section--remember-me__phone" type="checkbox" value="1" checked="checked" name="checkout[remember_me]" id="checkout_remember_me">
-            </div>
+									<div class="content-box">
+										<div class="content-box__row checkbox-wrapper">
+											<div class="checkbox__input">
+												<input class="input-checkbox" type="checkbox" value="1" checked="checked" name="checkout[remember_me]" id="checkout_remember_me">
+											</div>
+											<label class="checkbox__label content-box__emphasis" for="checkout_remember_me">Save my information for a faster checkout</label>
+										</div>
+										<div class="content-box__row content-box__row--secondary" id="section--remember-me__phone">
+											<div class="fieldset">
+												<div class="field--half field field--optional">
+													<div class="field__input-wrapper field__input-wrapper--icon-left">
+														<label class="field__label field__label--visible" for="checkout_vault_phone">Mobile phone number</label>
+														<input placeholder="Mobile phone number" class="field__input field__input--numeric" id="phone" name="phone" type="tel">
+														<div id="remember_me_mobile_phone_number_tooltip" class="field__icon">
+															<div class="field__icon-svg">
+																<svg class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-24 icon-svg--block" aria-hidden="true" focusable="false"> <use xlink:href="#mobile-phone"></use> </svg>
+															</div>
+														</div> 
 
-            <label class="checkbox__label content-box__emphasis" for="checkout_remember_me">
-              Save my information for a faster checkout
-</label>          </div>
-        </div>
-
-        <div class="content-box__row content-box__row--secondary" data-remember-me-phone="" id="section--remember-me__phone">
-          <div class="fieldset">
-            <div class="field--half field field--optional">
-              
-              <div class="field__input-wrapper field__input-wrapper--icon-left"><label class="field__label field__label--visible" for="checkout_vault_phone">Mobile phone number</label>
-                <input placeholder="Mobile phone number" autocomplete="mobile tel" aria-describedby="remember-me-opt-in-description" data-backup="vault_phone" data-remember-me-phone-input="true" data-phone-flag-input="true" data-phone-flag-input-default-country="Spain" data-phone-formatter="true" data-phone-formatter-insert-country-code="true" data-phone-formatter-e164="true" data-phone-formatter-region-code="ES" data-phone-flag-label="Country/Region code" class="field__input field__input--numeric" maxlength="25" size="30" type="tel" name="" id="checkout_vault_phone"><div class="flag-selector flag-selector--hidden"><div class="flag-selector__icon"></div><svg focusable="false" aria-hidden="true" role="presentation" class="flag-selector__caret icon-svg icon-svg--size-10"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#caret-down"></use></svg><select class="flag-selector__select" data-region-code="true" aria-label="Country/Region code"><option value="AF">Afghanistan (+93)</option><option value="AX">Aland Islands (+358)</option><option value="AL">Albania (+355)</option><option value="DZ">Algeria (+213)</option><option value="AD">Andorra (+376)</option><option value="AO">Angola (+244)</option><option value="AI">Anguilla (+1)</option><option value="AG">Antigua And Barbuda (+1)</option><option value="AR">Argentina (+54)</option><option value="AM">Armenia (+374)</option><option value="AW">Aruba (+297)</option><option value="AU">Australia (+61)</option><option value="AT">Austria (+43)</option><option value="AZ">Azerbaijan (+994)</option><option value="BS">Bahamas (+1)</option><option value="BH">Bahrain (+973)</option><option value="BD">Bangladesh (+880)</option><option value="BB">Barbados (+1)</option><option value="BY">Belarus (+375)</option><option value="BE">Belgium (+32)</option><option value="BZ">Belize (+501)</option><option value="BJ">Benin (+229)</option><option value="BM">Bermuda (+1)</option><option value="BT">Bhutan (+975)</option><option value="BO">Bolivia (+591)</option><option value="BA">Bosnia And Herzegovina (+387)</option><option value="BW">Botswana (+267)</option><option value="BR">Brazil (+55)</option><option value="IO">British Indian Ocean Territory (+246)</option><option value="BN">Brunei (+673)</option><option value="BG">Bulgaria (+359)</option><option value="BF">Burkina Faso (+226)</option><option value="BI">Burundi (+257)</option><option value="KH">Cambodia (+855)</option><option value="CA">Canada (+1)</option><option value="CV">Cape Verde (+238)</option><option value="BQ">Caribbean Netherlands (+599)</option><option value="KY">Cayman Islands (+1)</option><option value="CF">Central African Republic (+236)</option><option value="TD">Chad (+235)</option><option value="CL">Chile (+56)</option><option value="CN">China (+86)</option><option value="CX">Christmas Island (+61)</option><option value="CC">Cocos (Keeling) Islands (+61)</option><option value="CO">Colombia (+57)</option><option value="KM">Comoros (+269)</option><option value="CG">Congo (+242)</option><option value="CD">Congo, The Democratic Republic Of The (+243)</option><option value="CK">Cook Islands (+682)</option><option value="CR">Costa Rica (+506)</option><option value="HR">Croatia (+385)</option><option value="CU">Cuba (+53)</option><option value="CW">Curaçao (+599)</option><option value="CY">Cyprus (+357)</option><option value="CZ">Czech Republic (+420)</option><option value="CI">Côte d'Ivoire (+225)</option><option value="DK">Denmark (+45)</option><option value="DJ">Djibouti (+253)</option><option value="DM">Dominica (+1)</option><option value="DO">Dominican Republic (+1)</option><option value="EC">Ecuador (+593)</option><option value="EG">Egypt (+20)</option><option value="SV">El Salvador (+503)</option><option value="GQ">Equatorial Guinea (+240)</option><option value="ER">Eritrea (+291)</option><option value="EE">Estonia (+372)</option><option value="SZ">Eswatini (+268)</option><option value="ET">Ethiopia (+251)</option><option value="FK">Falkland Islands (Malvinas) (+500)</option><option value="FO">Faroe Islands (+298)</option><option value="FJ">Fiji (+679)</option><option value="FI">Finland (+358)</option><option value="FR">France (+33)</option><option value="GF">French Guiana (+594)</option><option value="PF">French Polynesia (+689)</option><option value="GA">Gabon (+241)</option><option value="GM">Gambia (+220)</option><option value="GE">Georgia (+995)</option><option value="DE">Germany (+49)</option><option value="GH">Ghana (+233)</option><option value="GI">Gibraltar (+350)</option><option value="GR">Greece (+30)</option><option value="GL">Greenland (+299)</option><option value="GD">Grenada (+1)</option><option value="GP">Guadeloupe (+590)</option><option value="GT">Guatemala (+502)</option><option value="GG">Guernsey (+44)</option><option value="GN">Guinea (+224)</option><option value="GW">Guinea Bissau (+245)</option><option value="GY">Guyana (+592)</option><option value="HT">Haiti (+509)</option><option value="VA">Holy See (Vatican City State) (+39)</option><option value="HN">Honduras (+504)</option><option value="HK">Hong Kong (+852)</option><option value="HU">Hungary (+36)</option><option value="IS">Iceland (+354)</option><option value="IN">India (+91)</option><option value="ID">Indonesia (+62)</option><option value="IR">Iran, Islamic Republic Of (+98)</option><option value="IQ">Iraq (+964)</option><option value="IE">Ireland (+353)</option><option value="IM">Isle Of Man (+44)</option><option value="IL">Israel (+972)</option><option value="IT">Italy (+39)</option><option value="JM">Jamaica (+1)</option><option value="JP">Japan (+81)</option><option value="JE">Jersey (+44)</option><option value="JO">Jordan (+962)</option><option value="KZ">Kazakhstan (+7)</option><option value="KE">Kenya (+254)</option><option value="KI">Kiribati (+686)</option><option value="KP">Korea, Democratic People's Republic Of (+850)</option><option value="XK">Kosovo (+383)</option><option value="KW">Kuwait (+965)</option><option value="KG">Kyrgyzstan (+996)</option><option value="LA">Lao People's Democratic Republic (+856)</option><option value="LV">Latvia (+371)</option><option value="LB">Lebanon (+961)</option><option value="LS">Lesotho (+266)</option><option value="LR">Liberia (+231)</option><option value="LY">Libyan Arab Jamahiriya (+218)</option><option value="LI">Liechtenstein (+423)</option><option value="LT">Lithuania (+370)</option><option value="LU">Luxembourg (+352)</option><option value="MO">Macao (+853)</option><option value="MG">Madagascar (+261)</option><option value="MW">Malawi (+265)</option><option value="MY">Malaysia (+60)</option><option value="MV">Maldives (+960)</option><option value="ML">Mali (+223)</option><option value="MT">Malta (+356)</option><option value="MQ">Martinique (+596)</option><option value="MR">Mauritania (+222)</option><option value="MU">Mauritius (+230)</option><option value="YT">Mayotte (+262)</option><option value="MX">Mexico (+52)</option><option value="MD">Moldova, Republic of (+373)</option><option value="MC">Monaco (+377)</option><option value="MN">Mongolia (+976)</option><option value="ME">Montenegro (+382)</option><option value="MS">Montserrat (+1)</option><option value="MA">Morocco (+212)</option><option value="MZ">Mozambique (+258)</option><option value="MM">Myanmar (+95)</option><option value="NA">Namibia (+264)</option><option value="NR">Nauru (+674)</option><option value="NP">Nepal (+977)</option><option value="NL">Netherlands (+31)</option><option value="NC">New Caledonia (+687)</option><option value="NZ">New Zealand (+64)</option><option value="NI">Nicaragua (+505)</option><option value="NE">Niger (+227)</option><option value="NG">Nigeria (+234)</option><option value="NU">Niue (+683)</option><option value="NF">Norfolk Island (+672)</option><option value="MK">North Macedonia (+389)</option><option value="NO">Norway (+47)</option><option value="OM">Oman (+968)</option><option value="PK">Pakistan (+92)</option><option value="PS">Palestinian Territory, Occupied (+970)</option><option value="PA">Panama (+507)</option><option value="PG">Papua New Guinea (+675)</option><option value="PY">Paraguay (+595)</option><option value="PE">Peru (+51)</option><option value="PH">Philippines (+63)</option><option value="PL">Poland (+48)</option><option value="PT">Portugal (+351)</option><option value="QA">Qatar (+974)</option><option value="CM">Republic of Cameroon (+237)</option><option value="RE">Reunion (+262)</option><option value="RO">Romania (+40)</option><option value="RU">Russia (+7)</option><option value="RW">Rwanda (+250)</option><option value="BL">Saint Barthélemy (+590)</option><option value="SH">Saint Helena (+290)</option><option value="KN">Saint Kitts And Nevis (+1)</option><option value="LC">Saint Lucia (+1)</option><option value="MF">Saint Martin (+590)</option><option value="PM">Saint Pierre And Miquelon (+508)</option><option value="WS">Samoa (+685)</option><option value="SM">San Marino (+378)</option><option value="ST">Sao Tome And Principe (+239)</option><option value="SA">Saudi Arabia (+966)</option><option value="SN">Senegal (+221)</option><option value="RS">Serbia (+381)</option><option value="SC">Seychelles (+248)</option><option value="SL">Sierra Leone (+232)</option><option value="SG">Singapore (+65)</option><option value="SX">Sint Maarten (+1)</option><option value="SK">Slovakia (+421)</option><option value="SI">Slovenia (+386)</option><option value="SB">Solomon Islands (+677)</option><option value="SO">Somalia (+252)</option><option value="ZA">South Africa (+27)</option><option value="KR">South Korea (+82)</option><option value="SS">South Sudan (+211)</option><option value="ES">Spain (+34)</option><option value="LK">Sri Lanka (+94)</option><option value="VC">St. Vincent (+1)</option><option value="SD">Sudan (+249)</option><option value="SR">Suriname (+597)</option><option value="SJ">Svalbard And Jan Mayen (+47)</option><option value="SE">Sweden (+46)</option><option value="CH">Switzerland (+41)</option><option value="SY">Syria (+963)</option><option value="TW">Taiwan (+886)</option><option value="TJ">Tajikistan (+992)</option><option value="TZ">Tanzania, United Republic Of (+255)</option><option value="TH">Thailand (+66)</option><option value="TL">Timor Leste (+670)</option><option value="TG">Togo (+228)</option><option value="TK">Tokelau (+690)</option><option value="TO">Tonga (+676)</option><option value="TT">Trinidad and Tobago (+1)</option><option value="TN">Tunisia (+216)</option><option value="TR">Turkey (+90)</option><option value="TM">Turkmenistan (+993)</option><option value="TC">Turks and Caicos Islands (+1)</option><option value="TV">Tuvalu (+688)</option><option value="UG">Uganda (+256)</option><option value="UA">Ukraine (+380)</option><option value="AE">United Arab Emirates (+971)</option><option value="GB">United Kingdom (+44)</option><option value="US">United States (+1)</option><option value="UY">Uruguay (+598)</option><option value="UZ">Uzbekistan (+998)</option><option value="VU">Vanuatu (+678)</option><option value="VE">Venezuela (+58)</option><option value="VN">Vietnam (+84)</option><option value="VG">Virgin Islands, British (+1)</option><option value="WF">Wallis And Futuna (+681)</option><option value="EH">Western Sahara (+212)</option><option value="YE">Yemen (+967)</option><option value="ZM">Zambia (+260)</option><option value="ZW">Zimbabwe (+263)</option></select></div><input type="hidden" name="checkout[vault_phone]">
-                <div id="remember_me_mobile_phone_number_tooltip" class="field__icon"><div class="field__icon-svg"><svg class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-24 icon-svg--block" aria-hidden="true" focusable="false"> <use xlink:href="#mobile-phone"></use> </svg></div></div>
-              </div>
-</div>          </div>
-          <p id="remember-me-opt-in-description" class="fieldset-description">
-            Next time you check out here or on other stores powered by Shopify, you’ll receive a code by text message to securely purchase with Shop Pay.
-          </p>
-        </div>
-      </div>
-    </div>
-
-
-    <p class="section__content__policy small-text" data-remember-me-terms="">
-      By continuing, you agree to Shop Pay’s <a href="https://www.shopify.com/legal/privacy/app-users" class="link--muted" data-remember-policy-link="privacy_policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="https://shop.app/terms-of-service" class="link--muted" data-remember-policy-link="terms" target="_blank" rel="noopener noreferrer">Terms of Service</a>.
-    </p>
-    
+													</div>
+												</div>
+											</div>
+											<p class="fieldset-description">
+												Next time you check out here or on other stores powered by Shopify, you’ll receive a code by text message to securely purchase with Shop Pay.
+											</p>
+										</div>
+									</div>
+								</div>
+								<p class="section__content__policy small-text">
+									By continuing, you agree to Shop Pay’s <a href="https://www.shopify.com/legal/privacy/app-users" class="link--muted" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="https://shop.app/terms-of-service" class="link--muted" target="_blank" rel="noopener noreferrer">Terms of Service</a>.
+								</p>
 							</div>
-
-
-
-
 
 							<div class="step__footer step-payment is-hide">
 								<!-- step 3 -->
@@ -1050,51 +1003,11 @@
 							</div>
 
 						</form>
-
-
-
-
-
-
-
-
-
-						<!-- <div class="step__footer"> -->
-							<!-- step2 -->
-							<!-- <div class="step-shipping is-hide">
-								<a class="previous-link RtoIJs" href="#">
-									<svg focusable="false" aria-hidden="true" class="icon-svg icon-svg--color-accent icon-svg--size-10 previous-link__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M8 1L7 0 3 4 2 5l1 1 4 4 1-1-4-4"></path></svg><span class="step__footer__previous-link-content">Return to information</span>
-								</a>
-								<button name="button" type="submit" id="continue_button2" class="continue-btn btn toPaymentBtnJs">
-									<span class="btn__content">Continue to payment</span>
-									<svg class="icon-svg icon-svg--size-18 btn__spinner icon-svg--spinner-button" aria-hidden="true" focusable="false"><use xlink:href="#spinner-button" /></svg>
-								</button>
-							</div> -->
-
-							<!-- step 3 -->
-							<!-- <div class="step-payment is-hide">
-								<a class="previous-link RtoSJs" href="#">
-									<svg focusable="false" aria-hidden="true" class="icon-svg icon-svg--color-accent icon-svg--size-10 previous-link__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M8 1L7 0 3 4 2 5l1 1 4 4 1-1-4-4"></path></svg><span class="step__footer__previous-link-content">Return to shipping</span>
-								</a>
-								<button name="button" type="submit" id="continue_button3" class="continue-btn btn">
-									<span class="btn__content">Pay now</span>
-									<svg class="icon-svg icon-svg--size-18 btn__spinner icon-svg--spinner-button" aria-hidden="true" focusable="false"><use xlink:href="#spinner-button" /></svg>
-								</button>
-							</div>
-						</div> -->
-
 						<div class="payment-card-holder">
 							<span class="payment-card-title">Guaranteed safe and secure checkout!</span>
 							<img alt="SomniFix" class="payment-img" src="assets/images/paybadges.jpg">
 						</div>
-
-
-
-
-
-
 					</div>
-
 					<footer class="main__footer">
 						<ul class="policy-list">
 							<li class="policy-list__item ">
@@ -1102,14 +1015,37 @@
 							</li>
 						</ul>
 					</footer>
-					
 				</div>
 
 
 
 				<aside class="sidebar">
-					<div class="sidebar__content">
+					<!-- mobile sidebar button -->
+					<button class="order-summary-toggle orderBtnToggleJs">
+						<span class="order-summary-toggle__inner">
+							<span class="title-wrap">
+						        <span class="icon-wrapper">
+									<svg width="20" height="19" xmlns="http://www.w3.org/2000/svg" class="toggle__icon">
+						            	<path d="M17.178 13.088H5.453c-.454 0-.91-.364-.91-.818L3.727 1.818H0V0h4.544c.455 0 .91.364.91.818l.09 1.272h13.45c.274 0 .547.09.73.364.18.182.27.454.18.727l-1.817 9.18c-.09.455-.455.728-.91.728zM6.27 11.27h10.09l1.454-7.362H5.634l.637 7.362zm.092 7.715c1.004 0 1.818-.813 1.818-1.817s-.814-1.818-1.818-1.818-1.818.814-1.818 1.818.814 1.817 1.818 1.817zm9.18 0c1.004 0 1.817-.813 1.817-1.817s-.814-1.818-1.818-1.818-1.818.814-1.818 1.818.814 1.817 1.818 1.817z"></path>
+									</svg>
+						        </span>
+						        <span class="toggle__text showTextJs">
+						       		<span>Show order summary</span>
+						       		<svg width="11" height="6" xmlns="http://www.w3.org/2000/svg" class="toggle__dropdown" fill="#000"><path d="M.504 1.813l4.358 3.845.496.438.496-.438 4.642-4.096L9.504.438 4.862 4.534h.992L1.496.69.504 1.812z"></path></svg>
+						        </span>
+						        <span class="toggle__text hideTextJs is-hide">
+						        	<span>Hide order summary</span>
+						        	<svg width="11" height="7" xmlns="http://www.w3.org/2000/svg" class="toggle__dropdown" fill="#000"><path d="M6.138.876L5.642.438l-.496.438L.504 4.972l.992 1.124L6.138 2l-.496.436 3.862 3.408.992-1.122L6.138.876z"></path></svg>
+						        </span>
+						    </span>
+							<span class="title-price">
+								<del class="original-price">$36.77</del>
+								<span class="final-price">$26.79</span>
+							</span>
+						</span>
+					</button>
 
+					<div class="sidebar__content">
 						<div class="order-summary">
 							<!-- item 1 -->
 							<div class="order-summary__item product-list">

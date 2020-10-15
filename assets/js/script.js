@@ -1,3 +1,6 @@
+
+
+
 $(document).ready(function(){
 
 	// countdown
@@ -143,6 +146,21 @@ $(document).ready(function(){
 					required: true,
 					phoneno: true 
 				},
+				card_number: {
+					required: true,
+					digits: true
+				},
+				card_name: {
+					required: true
+				},
+				card_expiry: {
+					required: true,
+					digits: true
+				},
+				security_code: {
+					required: true,
+					digits: true
+				},
 				optional: {
 					required: false
 				}
@@ -154,13 +172,15 @@ $(document).ready(function(){
 				address: 'Enter an address',
 				city: 'Please enter a valid city',
 				zip: 'Enter a ZIP / postal code',
-				phone: 'Enter a valid phone number'
+				phone: 'Enter a valid phone number',
+
+				card_expiry: 'Enter a valid card expiry'
 			},
 			errorPlacement: function(error, element) {
 				$('body').find('.noticeErrorJs').removeClass('is-hide');
-				$('html, body').stop().animate({
-					scrollTop: $('body').find('.step__payment-method').offset().top
-				}, 300);
+				// $('html, body').stop().animate({
+				// 	scrollTop: $('body').find('.step__payment-method').offset().top
+				// }, 300);
 			},
 			submitHandler: function(form) {  
 				// Finished steps
@@ -172,14 +192,11 @@ $(document).ready(function(){
 
 
 	// discount code
-	var discountArr = ['CRAFTON','CRAFTON-1','CRAFTON-1']
-
+	// var discountArr = ['CRAFTON','CRAFTON-1','CRAFTON-1']
 	
 	$.validator.addMethod("discount", function(value, element) {
 		return this.optional(element) || /^\bCRAFTON\b$/.test(value);
-
 		// return this.optional(element) || /^\b$.each(discountArr,function(index,value){value})\b$/.test(value);
-		console.log('123123123')
 	});
 
 	$(".validateReduction").each(function() {
@@ -304,5 +321,40 @@ $(document).ready(function(){
 		$(this).closest('.radio-wrapper').next().removeClass('is-hide');
 	});
 
+	// tel input
+	var input = document.querySelector("#phone");
+	window.intlTelInput(input, {
+		utilsScript: "node_modules/intl-tel-input/build/js/utils.js",
+	});
 
+	// show tel input if checbox is checked
+	$(document).on('click', '.step__remember .checkbox-wrapper .input-checkbox, .step__remember .checkbox-wrapper .checkbox__label', function() {
+		if($(".step__remember .checkbox-wrapper .input-checkbox").is(':checked')){
+			$('body').find('.step__remember .content-box .content-box__row--secondary').removeClass('is-hide');  // checked
+		}else{
+			$('body').find('.step__remember .content-box .content-box__row--secondary').addClass('is-hide');  // unchecked
+		}
+	});
+
+
+	// mobile sidebar
+	$(document).on('click', '.orderBtnToggleJs', function() {
+		$(this).addClass('show-btn');
+		$(".sidebar__content").slideDown( "slow", function() {
+			$('body').find(".hideTextJs").removeClass('is-hide');
+			$('body').find(".showTextJs").addClass('is-hide');
+		});
+
+		
+	});
+
+
+	$(document).on('click', '.orderBtnToggleJs.show-btn', function() {
+		$(this).removeClass('show-btn');
+		$(".sidebar__content").slideUp( "slow", function() {
+			$('body').find(".hideTextJs").addClass('is-hide');
+			$('body').find(".showTextJs").removeClass('is-hide');
+		});
+	});
+	
 });

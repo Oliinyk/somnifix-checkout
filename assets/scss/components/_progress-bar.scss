@@ -24,6 +24,11 @@
             // min-width: 29%;
             min-width: 32.3%;
         }
+        @media (max-width: 750px){
+            width: 30%;
+            font-size: 11px;
+            min-height: 36px;
+        }
         &:after, 
         &:before {
             content: " ";

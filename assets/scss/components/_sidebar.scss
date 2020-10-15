@@ -7,10 +7,13 @@
 		padding-left: 4%;
 		background-position: left top;
 	}
+	@media (max-width: 999px){
+		order: 1;
+		overflow: hidden;
+	}
 	&::after {
 		content: "";
 		display: block;
-		// width: 300%;
 		width: calc(100vw/2);
 		position: absolute;
 		top: 0;
@@ -24,8 +27,16 @@
 			background-position: left top;
 			box-shadow: 1px 0 0 #e1e1e1 inset;
 		}
+		@media (max-width: 999px){
+			width: 300%;
+			left: -100%;
+		}
 	}
-	
+	&__content {
+		@media (max-width: 999px){
+			display: none;
+		}
+	}
 	.order-summary {
 		position: relative;
 		z-index: 1;
@@ -66,10 +77,15 @@
 		}
 	}
 	.product-table {
-		margin-top: 10px;
-		margin-bottom: 21px;
 		position: relative;
 		width: 100%;
+		@media (min-width: 1000px){
+			margin-top: 10px;
+			margin-bottom: 21px;
+		}
+		@media (max-width: 999px){
+			margin: 21px 0;
+		}
 		td, th {
 			padding-left: 14px;
 		}
@@ -79,6 +95,7 @@
 		&:first-child {
 			td {
 				padding-top: 0;
+				padding-left: 0;
 			}
 		}
 	}
@@ -162,6 +179,9 @@
 	// item 2
 	.product-discount {
 		padding: 21px 0;
+		.field {
+			padding: 0;
+		}
 		.field__wrapper {
 			display: flex;
 			align-items: flex-start;
@@ -300,6 +320,75 @@
 		border-spacing:0px 20px;
 	}
 	.icon-svg--color-adaptive-light {
-	    fill: currentColor;
+		fill: currentColor;
+	}
+}
+
+.order-summary-toggle {
+	display: flex;
+	position: relative;
+	width: 100%;
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+	padding: 18px 14px;
+	overflow: hidden;
+	@media (min-width: 1000px){
+		display: none;
+	}
+	&:after {
+		content: '';
+		background-color: #fafafa;
+		border-top: 1px solid #e6e6e6;
+		border-bottom: 1px solid #e6e6e6;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 300vw;
+		left: -100vw;
+		z-index: 1;
+	}
+	&__inner {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+	}
+	.title-wrap {
+		display: flex;
+		.icon-wrapper {
+			padding-right: 10px;
+		}
+		.toggle__text {
+			color: #68cad9;
+			vertical-align: middle;
+			transition: color 0.2s ease-in-out 0s;
+		}
+		.toggle__icon {
+			transition: fill 0.2s ease-in-out;
+			fill: #68cad9;
+		}
+	}
+	.toggle__dropdown {
+		display: inline-block;
+		width: auto;
+		fill: #68cad9;
+	}
+	.title-price {
+		padding-left: 10px;
+		text-align: right;
+		.original-price {
+			font-size: 12px;
+			color: #737373;
+			display: block;
+		}
+		.final-price {
+			font-size: 18px;
+			line-height: 1;
+			color: #333;
+		}
 	}
 }
