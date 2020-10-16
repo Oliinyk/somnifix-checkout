@@ -324,7 +324,8 @@ $(document).ready(function(){
 	// tel input
 	var input = document.querySelector("#phone");
 	window.intlTelInput(input, {
-		utilsScript: "node_modules/intl-tel-input/build/js/utils.js",
+		// utilsScript: "node_modules/intl-tel-input/build/js/utils.js",
+		utilsScript: "assets/js/utils.js",
 	});
 
 	// show tel input if checbox is checked
